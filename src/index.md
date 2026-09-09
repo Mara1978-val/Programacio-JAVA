@@ -58,7 +58,7 @@ El módulo de **Programación** recorre el camino completo desde qué significa 
 ::: accent-box teal left Navegación por unidades
 
 - El menú **📚 Unidades** de la barra superior muestra la unidad en la que estás y **todas las anteriores**. Avanza contigo a medida que recorres el módulo.
-- El panel lateral izquierdo lista los **contenidos**, los **contenidos adicionales** y los **ejercicios y soluciones** de la unidad abierta.
+- El panel lateral izquierdo lista los **contenidos**, los **contenidos adicionales** y los **ejercicios** de la unidad abierta.
 - El selector de idioma del navbar cambia entre **Español** y **Valencià** manteniendo la página en la que estás.
 
 :::

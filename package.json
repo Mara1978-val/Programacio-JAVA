@@ -15,7 +15,9 @@
     "preview": "vitepress preview docs",
     "docs:dev": "vitepress dev src",
     "docs:build": "vitepress build src",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "build:profesorado": "SOLUCIONES=1 vitepress build src",
+    "dev:profesorado": "SOLUCIONES=1 vitepress dev src"
   },
   "devDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.49.0",

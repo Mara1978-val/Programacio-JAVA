@@ -30,12 +30,14 @@ src/
 │       ├── index.md            #    Portada de la unidad
 │       ├── contenidos/         #    Teoría y contenidos adicionales
 │       ├── ejercicios/         #    Enunciados
-│       └── soluciones/         #    Soluciones (grupo de sidebar aparte)
+│       └── soluciones-<sufijo>/ #   Soluciones (fuera del build público)
 ├── uf1/                        # ── Español (avisos de traducción) ──
 │   ├── index.md
 │   ├── contenidos/
 │   ├── ejercicios/
-│   └── soluciones/
+│   └── soluciones-<sufijo>/
+├── profesorado/                # Índice de soluciones (fuera del build público)
+├── ca/profesorado/             #    y su versión en valenciano
 ├── …                           # uf2 … uf12, en ambos idiomas
 ├── public/img/
 │   ├── uf1/ … uf12/            # Imágenes separadas por unidad
@@ -65,8 +67,52 @@ VitePress sirve el sidebar según el prefijo de la URL, así que ambos idiomas c
 ## Navegación
 
 - **Navbar acumulativo** — el desplegable **📚 Unidades / Unitats** muestra la unidad en la que estás y **todas las anteriores**. Lo pinta `DynamicNav.vue` leyendo `unitNavbars` de `config/units.ts` según la URL actual: el alumno no ve unidades que aún no se han impartido, pero siempre puede volver a las ya vistas.
-- **Sidebar por unidad** — cuatro grupos independientes: contenidos, contenidos adicionales, ejercicios y soluciones. Enunciados y soluciones están separados en carpeta y grupo distintos, de modo que se pueden ocultar o restringir las soluciones sin tocar los enunciados. Las UF1, UF3.1 y UF12 no tienen soluciones y no muestran ese grupo.
+- **Sidebar por unidad** — contenidos, contenidos adicionales y ejercicios. El grupo de soluciones solo aparece en el build del profesorado (ver más abajo).
 - **Selector de idioma** — lo genera VitePress a partir de `locales` en `config.mts`; mantiene la página en la que estás al cambiar de idioma.
+
+---
+
+## Soluciones y material del profesorado
+
+Las soluciones **no se publican en el sitio del alumnado**. No están ocultas: no se construyen.
+
+```bash
+npm run dev             # sitio del alumnado (sin soluciones)
+npm run build           # ídem — es lo que ejecuta GitHub Actions
+
+npm run dev:profesorado    # con soluciones y /profesorado/
+npm run build:profesorado  # ídem, build completo
+```
+
+`config.mts` aplica `srcExclude: ['**/soluciones-*/**', '**/profesorado/**']` salvo que se
+construya con `SOLUCIONES=1`, y `units.ts` añade el grupo `✅ Solucions` al sidebar bajo la
+misma condición. El índice para el profesorado está en `src/profesorado/soluciones2627.md`
+(y su versión valenciana), con el enlace a cada solución.
+
+### Por qué no basta con ocultar la ruta
+
+VitePress inyecta `__VP_HASH_MAP__` —el mapa de **todas** las rutas del sitio— en el HTML de
+cada página, y además escribe `hashmap.json` en la raíz del build. Cualquier página construida
+es localizable con «ver código fuente» en la portada, por muy aleatorio que sea el nombre de su
+carpeta y aunque no la enlace nadie. Antes de este cambio, la portada exponía las 24 rutas de
+soluciones. Por eso la protección es `srcExclude`: sin páginas, no hay rutas que filtrar.
+
+Cada unidad usa además una carpeta `soluciones-<16 caracteres aleatorios>`, distinta en cada
+unidad, como capa adicional por si el build del profesorado llegara a servirse sin control de
+acceso delante. Es defensa en profundidad, no la protección principal.
+
+### Si quieres las soluciones accesibles online
+
+Lo robusto es autenticar, no ocultar: despliega el build del profesorado en un hostname aparte
+protegido con Cloudflare Access, el mismo patrón que usa `introduccion-laravel`
+(`functions/_middleware.js` cierra los dominios `*.pages.dev` para que el contenido solo salga
+por el dominio propio, donde Access valida la identidad antes de servir el asset).
+
+Comprobación rápida de que el build público no filtra nada:
+
+```bash
+npm run build && grep -ril "soluciones-" docs/ | wc -l   # debe dar 0
+```
 
 ---
 

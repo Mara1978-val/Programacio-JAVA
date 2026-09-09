@@ -285,6 +285,17 @@ const accentBoxContainer: [typeof container, string, { render(tokens: Token[], i
 export default defineConfig({
   base:   basePath,
   outDir: PROJECT.outDir,
+  // ── Soluciones y material del profesorado: fuera del build público ─────────
+  // No basta con quitarlas del sidebar ni con ofuscar el nombre de la carpeta:
+  // VitePress inyecta __VP_HASH_MAP__ (el mapa de TODAS las rutas del sitio) en
+  // el HTML de cada página, y además escribe hashmap.json en la raíz. Cualquier
+  // ruta construida es, por tanto, pública aunque no la enlace nadie.
+  // La única protección real es no construir esas páginas: así no existen en
+  // docs/, ni en el mapa de rutas, ni hay nada que adivinar.
+  // Para el sitio del profesorado: SOLUCIONES=1 npm run build (o build:profesorado).
+  srcExclude: process.env.SOLUCIONES === '1'
+    ? []
+    : ['**/soluciones-*/**', '**/profesorado/**'],
   vite: {
     build: {
       // El proyecto incluye bundles grandes (Mermaid/slides); elevamos el umbral

@@ -52,7 +52,7 @@ El mòdul de **Programació** recorre el camí complet des de què significa pro
 ::: accent-box teal left Navegació per unitats
 
 - El menú **📚 Unitats** de la barra superior mostra la unitat en la qual estàs i **totes les anteriors**. Avança amb tu a mesura que recorres el mòdul.
-- El panell lateral esquerre llista els **continguts**, els **continguts addicionals** i els **exercicis i solucions** de la unitat oberta.
+- El panell lateral esquerre llista els **continguts**, els **continguts addicionals** i els **exercicis** de la unitat oberta.
 - El selector d'idioma del navbar canvia entre **Valencià** i **Español** mantenint la pàgina en la qual estàs.
 
 :::
