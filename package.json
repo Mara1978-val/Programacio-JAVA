@@ -11,13 +11,13 @@
   },
   "scripts": {
     "dev": "vitepress dev src",
-    "build": "vitepress build src && vitepress build soluciones",
+    "build": "vitepress build src && node scripts/build-soluciones.mjs",
     "preview": "vitepress preview docs",
     "docs:dev": "vitepress dev src",
     "docs:build": "vitepress build src",
     "docs:preview": "vitepress preview docs",
-    "build:soluciones": "vitepress build soluciones",
-    "dev:soluciones": "vitepress dev soluciones"
+    "build:soluciones": "node scripts/build-soluciones.mjs",
+    "dev:soluciones": "vitepress dev soluciones/profesor"
   },
   "devDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.49.0",

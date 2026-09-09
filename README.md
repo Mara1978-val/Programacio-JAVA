@@ -47,13 +47,19 @@ src/
         ├── logos.ts            # Logos y alturas
         └── units.ts            # 👤 Unidades, sidebars y navbar acumulativo
 
-soluciones/                     # ── Segundo sitio: soluciones del profesorado ──
-├── .vitepress/
-│   ├── config.mts              # Config propia; reutiliza tema y config de src/
-│   ├── config/ruta.ts          # 🔑 RUTA_PRIVADA — la dirección secreta
-│   └── theme/index.ts          # Re-exporta el tema del temario
-├── index.md                    # Índice de soluciones
-└── uf2/ … uf11/                # Las 12 soluciones
+soluciones/                     # ── Un sitio independiente por unidad ──
+├── _shared/
+│   ├── rutas.ts                # 🔑 Las rutas privadas (una por unidad)
+│   ├── config.ts               # Fábrica de config común a todos
+│   └── indice.ts               # Índice que alimenta la portada del profesorado
+├── profesor/                   # Índice con TODAS las rutas — no compartir
+│   ├── .vitepress/
+│   └── index.md
+├── uf7/                        # Sitio propio de las soluciones de UF7
+│   ├── .vitepress/
+│   ├── index.md
+│   └── 15-solucions.md
+└── uf2/ uf3-2/ uf4/ …          # Una carpeta por unidad con soluciones
 ```
 
 ### Códigos de unidad
@@ -79,54 +85,56 @@ VitePress sirve el sidebar según el prefijo de la URL, así que ambos idiomas c
 
 ## Soluciones del profesorado
 
-Las soluciones son un **segundo sitio VitePress**, publicado dentro del sitio del temario bajo
-una ruta privada de 20 caracteres aleatorios (`soluciones/.vitepress/config/ruta.ts`):
+Cada unidad con soluciones se publica como un **sitio VitePress independiente**, bajo su propia
+ruta privada de longitud variable (14–22 caracteres aleatorios), definida en
+`soluciones/_shared/rutas.ts`:
 
 ```
-https://<dominio>/programacion/           ← temario, para el alumnado
-https://<dominio>/programacion/<20 chars>/ ← soluciones, para el profesorado
+/programacion/                    → temario, para el alumnado
+/programacion/<ruta de uf7>/      → solo las soluciones de UF7
+/programacion/<ruta de profesor>/ → índice con todas — no compartir
 ```
 
 ```bash
-npm run build            # construye el temario y, después, las soluciones
-npm run dev              # temario en local
-npm run dev:soluciones   # soluciones en local
+npm run build              # temario + los 12 sitios de soluciones
+npm run build:soluciones   # solo los sitios de soluciones
+npm run dev:soluciones     # índice del profesorado en local
 ```
 
-Se ven exactamente igual que el resto del curso: el sitio de soluciones reexporta el tema de
-`src/.vitepress/theme` y comparte contenedores y variables CSS vía `src/.vitepress/config/shared.ts`,
-así que pestañas, diagramas Mermaid, modo oscuro y exportación a PDF funcionan igual.
+### Compartir la solución de una unidad
 
-### Por qué dos sitios y no una carpeta oculta
+Da al alumnado **el enlace de esa unidad**. Quien lo reciba no puede llegar ni a las soluciones
+de otras unidades ni al índice del profesorado: son sitios distintos y el código fuente de uno
+no menciona ninguna dirección de los demás. Comprobado en cada build.
+
+### Por qué un sitio por unidad y no una carpeta oculta
 
 VitePress inyecta el mapa de **todas** las rutas de un sitio (`__VP_HASH_MAP__`) en el HTML de
-cada una de sus páginas, y además escribe `hashmap.json` en la raíz del build. Cualquier página
-de un sitio es localizable con «ver código fuente» en su portada, por muy aleatorio que sea el
-nombre de su carpeta y aunque no la enlace nadie. Ofuscar el nombre no sirve: el mapa lista la
-ruta entera, sufijo incluido.
+cada una de sus páginas, y lo escribe además en `hashmap.json`. Dentro de un mismo sitio no hay
+forma de esconder una página de otra: da igual lo aleatorio que sea el nombre de su carpeta,
+porque el mapa lista la ruta entera. Con todas las soluciones en un único sitio, dar el enlace
+de UF7 enseñaba las otras once en «ver código fuente».
 
-Al ser un sitio VitePress **independiente**, su mapa contiene solo sus propias páginas. El sitio
-del alumnado no sabe que existe. Verificado en cada build:
+Al ser sitios separados, el mapa de cada uno contiene solo sus propias páginas:
 
-```bash
-npm run build
-grep -rl "$(grep -oP "(?<=RUTA_PRIVADA = ')[^']+" soluciones/.vitepress/config/ruta.ts)" \
-  docs --exclude-dir="$(grep -oP "(?<=RUTA_PRIVADA = ')[^']+" soluciones/.vitepress/config/ruta.ts)" \
-  | wc -l    # debe dar 0
-```
-
-Los ficheros fuente viven en `soluciones/`, **fuera de `src/`**, así que no pueden colarse en el
-sitio del alumnado ni por descuido. Las páginas privadas llevan además `noindex, nofollow`.
+| Sitio | Entradas en su mapa |
+|---|---|
+| Temario | 283 — ninguna de soluciones |
+| Soluciones de UF7 | 2 — su portada y su solución |
+| Índice del profesorado | 1 |
 
 ### Reglas de uso
 
-- **No enlaces la ruta privada** desde ninguna página del curso ni desde el aula virtual.
-  Compártela solo con el profesorado y por un canal privado.
-- **Para rotarla**: cambia `RUTA_PRIVADA` y vuelve a desplegar. La ruta antigua desaparece,
-  porque `docs/` se regenera entero en cada build.
-- Esto es ocultación, no autenticación: quien tenga la dirección entra. Si necesitas control
-  real de acceso, protege esa ruta con Cloudflare Access (el patrón de `introduccion-laravel`,
-  con `functions/_middleware.js` cerrando los dominios `*.pages.dev`).
+- **La ruta de `profesor` no se comparte nunca**: es la única que conoce todas las demás.
+- **No enlaces ninguna ruta privada** desde el temario ni desde el aula virtual.
+- **Para rotar una**: cambia su código en `soluciones/_shared/rutas.ts` y vuelve a desplegar.
+  La ruta antigua desaparece porque `docs/` se regenera entero, y el índice del profesorado se
+  actualiza solo (lee de `rutas.ts`, no hay direcciones escritas a mano en ningún `.md`).
+- Esto es ocultación, no autenticación: quien tenga una dirección entra. Para control real de
+  acceso, protege esas rutas con Cloudflare Access (el patrón de `introduccion-laravel`).
+
+Los ficheros fuente viven en `soluciones/`, **fuera de `src/`**, así que no pueden colarse en el
+sitio del alumnado. Todas las páginas privadas llevan `noindex, nofollow, noarchive`.
 
 ---
 
