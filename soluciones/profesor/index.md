@@ -24,6 +24,13 @@ Aquesta pàgina és l'única que les coneix totes.
   `soluciones/_shared/rutas.ts` i torna a desplegar.
 :::
 
+::: tip Per què s'obrin en una pestanya nova
+Cada unitat és un lloc VitePress independent. El router de VitePress intercepta
+els enllaços del mateix domini i intenta resoldre'ls amb el mapa de rutes del
+lloc actual —que no coneix les altres unitats—, així que sense `target="_blank"`
+el clic acabaria en un 404. **No lleves l'atribut.**
+:::
+
 ## Índex
 
 <table>
@@ -36,7 +43,7 @@ Aquesta pàgina és l'única que les coneix totes.
       <td>{{ u.titulo }}</td>
       <td>
         <span v-for="(p, i) in u.pagines" :key="p.slug">
-          <span v-if="i > 0"> · </span><a :href="p.url">{{ p.text }}</a>
+          <span v-if="i > 0"> · </span><a :href="p.url" target="_blank" rel="noopener">{{ p.text }} ↗</a>
         </span>
       </td>
     </tr>
