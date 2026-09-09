@@ -19,6 +19,7 @@ import {
   buildCssVars,
   buildExerciseImageVars,
   MARKDOWN_CONTAINERS,
+  VITE_CONFIG,
 } from './config/shared'
 // ── Construir configuración ─────────────────────────────────────────────────
 const basePath     = PROJECT.basePath
@@ -77,21 +78,7 @@ if (COLORS.typography.fontImportUrl) {
 export default defineConfig({
   base:   basePath,
   outDir: PROJECT.outDir,
-  vite: {
-    build: {
-      // El proyecto incluye bundles grandes (Mermaid/slides); elevamos el umbral
-      // para evitar ruido en CI sin alterar el resultado de compilación.
-      chunkSizeWarningLimit: 2000,
-      rollupOptions: {
-        // 'dompurify' NO puede ir aquí: Mermaid lo importa en tiempo de ejecución.
-        // Al externalizarlo, el chunk de Mermaid conserva un `import "dompurify"`
-        // que el navegador no sabe resolver; el import() dinámico de Mermaid falla,
-        // el catch de theme/index.ts lo silencia y los diagramas se quedan como
-        // bloques de código. html2canvas y canvg sí son opcionales de jspdf.
-        external: ['html2canvas', 'canvg'],
-      },
-    },
-  },
+  vite: VITE_CONFIG,
   markdown: {
     config(md) {
       md.use(tabsMarkdownPlugin)

@@ -20,6 +20,7 @@ import {
   buildCssVars,
   buildExerciseImageVars,
   MARKDOWN_CONTAINERS,
+  VITE_CONFIG,
 } from '../../src/.vitepress/config/shared'
 import { RUTA_PRIVADA } from './config/ruta'
 
@@ -145,10 +146,7 @@ export default defineConfig({
       MARKDOWN_CONTAINERS.forEach(c => md.use(...(c as [any, string, any])))
     }
   },
-  vite: {
-    resolve: { alias: { html2canvas: 'html2canvas-pro' } },
-    build: { chunkSizeWarningLimit: 2000 },
-  },
+  vite: VITE_CONFIG,
   themeConfig: {
     siteTitle: 'Solucions</br>26/27',
     outline: { label: 'En aquesta pàgina', level: [2, 3] },

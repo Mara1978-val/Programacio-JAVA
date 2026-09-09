@@ -239,3 +239,26 @@ export const MARKDOWN_CONTAINERS = [
   noteBoxContainer,
   accentBoxContainer,
 ] as const
+
+// ── Configuración de Vite compartida ────────────────────────────────────────
+// Debe ser idéntica en los dos sitios: el CI instala con `npm install
+// --no-optional`, así que canvg y html2canvas (dependencias opcionales de
+// jspdf, que solo se usan al pulsar "Descargar PDF") no existen en el runner.
+// Sin externalizarlas, Rollup falla al resolver el import dinámico y el build
+// se cae —solo en CI, porque en local sí están instaladas—.
+//
+// 'dompurify' NO puede ir aquí: Mermaid lo importa en tiempo de ejecución. Al
+// externalizarlo, el chunk de Mermaid conserva un `import "dompurify"` que el
+// navegador no sabe resolver; el import() dinámico de Mermaid falla, el catch
+// de theme/index.ts lo silencia y los diagramas se quedan como bloques de código.
+export const VITE_CONFIG = {
+  build: {
+    // El proyecto incluye bundles grandes (Mermaid/slides); elevamos el umbral
+    // para evitar ruido en CI sin alterar el resultado de compilación.
+    chunkSizeWarningLimit: 2000,
+    rollupOptions: {
+      external: ['html2canvas', 'canvg'],
+    },
+  },
+}
+
