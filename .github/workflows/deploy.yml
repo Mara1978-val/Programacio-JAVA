@@ -32,6 +32,8 @@ jobs:
           npm install --no-optional --legacy-peer-deps
       - name: Build VitePress site
         run: npx vitepress build src
+      - name: Build solutions site (ruta privada del profesorado)
+        run: npx vitepress build soluciones
       - name: Add .nojekyll
         run: touch docs/.nojekyll
       - name: Upload artifact

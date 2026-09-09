@@ -28,12 +28,10 @@
 import { DefaultTheme } from 'vitepress'
 import type { NavGroup } from '../shared/navigation'
 
-// ── Build público vs. build del profesorado ──────────────────────────────────
-// Las soluciones NO se publican en el sitio del alumnado. Solo entran en el
-// sidebar cuando se construye con SOLUCIONES=1 (npm run build:profesorado);
-// config.mts además las excluye del build con srcExclude, de forma que sus
-// páginas ni siquiera existen en docs/ ni en el mapa de rutas del router.
-const CON_SOLUCIONES = process.env.SOLUCIONES === '1'
+// ── Soluciones ───────────────────────────────────────────────────────────────
+// No aparecen aquí a propósito. Son un sitio VitePress aparte (soluciones/),
+// construido en una ruta privada de docs/. Este sitio no las conoce, así que su
+// mapa de rutas no puede filtrarlas. Ver README, "Soluciones del profesorado".
 
 // ============================================================================
 // 1. NAVBAR BASE
@@ -122,15 +120,6 @@ const sidebarUF2_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Enunciados', link: '/ejercicios/7-enunciats' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-yLv503fjgH36IhE2/Solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF2_CA: DefaultTheme.SidebarItem[] = [
@@ -154,15 +143,6 @@ const sidebarUF2_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Enunciats', link: '/ejercicios/7-enunciats' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-yLv503fjgH36IhE2/Solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF3.1 - Introducció a la Programació I ──
@@ -246,15 +226,6 @@ const sidebarUF3_2_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Ejercicios', link: '/ejercicios/10-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-AAne2KZGe59ddbQh/14-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF3_2_CA: DefaultTheme.SidebarItem[] = [
@@ -290,15 +261,6 @@ const sidebarUF3_2_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Exercicis', link: '/ejercicios/10-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-AAne2KZGe59ddbQh/14-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF4 - Estructures repetitives ──
@@ -329,16 +291,6 @@ const sidebarUF4_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Tarea adicional', link: '/ejercicios/9-tasca-adicional' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-yXjzM6vvWoxWd7bL/8-solucions' },
-        { text: 'Solución de la tarea adicional', link: '/soluciones-yXjzM6vvWoxWd7bL/9-tasca-adicional-solucio' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF4_CA: DefaultTheme.SidebarItem[] = [
@@ -368,16 +320,6 @@ const sidebarUF4_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Tasca addicional', link: '/ejercicios/9-tasca-adicional' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-yXjzM6vvWoxWd7bL/8-solucions' },
-        { text: 'Solució de la tasca addicional', link: '/soluciones-yXjzM6vvWoxWd7bL/9-tasca-adicional-solucio' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF5.1 - Estructures de Dades Dinàmiques I ──
@@ -412,15 +354,6 @@ const sidebarUF5_1_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Ejercicios', link: '/ejercicios/9-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-bgtX1rS5hh81p7Ab/13-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF5_1_CA: DefaultTheme.SidebarItem[] = [
@@ -454,15 +387,6 @@ const sidebarUF5_1_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Exercicis', link: '/ejercicios/9-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-bgtX1rS5hh81p7Ab/13-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF5.2 - Estructures de Dades Dinàmiques II ──
@@ -483,15 +407,6 @@ const sidebarUF5_2_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Ejercicios', link: '/ejercicios/4-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-NoanIbrqioW26TmI/5-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF5_2_CA: DefaultTheme.SidebarItem[] = [
@@ -511,15 +426,6 @@ const sidebarUF5_2_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Exercicis', link: '/ejercicios/4-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-NoanIbrqioW26TmI/5-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF6 - Funcions ──
@@ -552,15 +458,6 @@ const sidebarUF6_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Ejercicios', link: '/ejercicios/9-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-nPy2Um7Fwaw8YLxK/11-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF6_CA: DefaultTheme.SidebarItem[] = [
@@ -592,15 +489,6 @@ const sidebarUF6_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Exercicis', link: '/ejercicios/9-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-nPy2Um7Fwaw8YLxK/11-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF7 - Programació Orientada a Objectes I ──
@@ -637,15 +525,6 @@ const sidebarUF7_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Ejercicios', link: '/ejercicios/10-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-ZMGziCRnagnZW6ho/15-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF7_CA: DefaultTheme.SidebarItem[] = [
@@ -681,15 +560,6 @@ const sidebarUF7_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Exercicis', link: '/ejercicios/10-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-ZMGziCRnagnZW6ho/15-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF8 - Programació Orientada a Objectes II ──
@@ -720,15 +590,6 @@ const sidebarUF8_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Ejercicios', link: '/ejercicios/7-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-HA23DIqSdVX4n4Ud/9-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF8_CA: DefaultTheme.SidebarItem[] = [
@@ -758,15 +619,6 @@ const sidebarUF8_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Exercicis', link: '/ejercicios/7-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-HA23DIqSdVX4n4Ud/9-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF9 - Excepcions ──
@@ -790,15 +642,6 @@ const sidebarUF9_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Ejercicios', link: '/ejercicios/7-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-SL0VwJf0QbCYGCG3/8-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF9_CA: DefaultTheme.SidebarItem[] = [
@@ -821,15 +664,6 @@ const sidebarUF9_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Exercicis', link: '/ejercicios/7-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-SL0VwJf0QbCYGCG3/8-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF10 - Persistència de dades I: Fitxers ──
@@ -851,15 +685,6 @@ const sidebarUF10_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Ejercicios', link: '/ejercicios/5-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-abksfUhU5zhahlMN/6-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF10_CA: DefaultTheme.SidebarItem[] = [
@@ -880,15 +705,6 @@ const sidebarUF10_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Exercicis', link: '/ejercicios/5-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-abksfUhU5zhahlMN/6-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF11 - Persistència de dades II: Bases de dades ──
@@ -925,15 +741,6 @@ const sidebarUF11_ES: DefaultTheme.SidebarItem[] = [
       { text: 'Ejercicios', link: '/ejercicios/8-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Soluciones',
-      collapsed: false,
-      items: [
-        { text: 'Soluciones', link: '/soluciones-wU6YAkjqTYPAxkbf/13-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 const sidebarUF11_CA: DefaultTheme.SidebarItem[] = [
@@ -969,15 +776,6 @@ const sidebarUF11_CA: DefaultTheme.SidebarItem[] = [
       { text: 'Exercicis', link: '/ejercicios/8-exercicis' },
     ]
   },
-  ...(CON_SOLUCIONES ? [
-    {
-      text: '✅ Solucions',
-      collapsed: false,
-      items: [
-        { text: 'Solucions', link: '/soluciones-wU6YAkjqTYPAxkbf/13-solucions' },
-      ]
-    },
-  ] : []),
 ]
 
 // ── UF12 - Interfícies gràfiques ──

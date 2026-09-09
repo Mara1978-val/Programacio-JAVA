@@ -29,15 +29,11 @@ src/
 │   └── uf1/                    # ── Contenido real (valenciano) ──
 │       ├── index.md            #    Portada de la unidad
 │       ├── contenidos/         #    Teoría y contenidos adicionales
-│       ├── ejercicios/         #    Enunciados
-│       └── soluciones-<sufijo>/ #   Soluciones (fuera del build público)
+│       └── ejercicios/         #    Enunciados
 ├── uf1/                        # ── Español (avisos de traducción) ──
 │   ├── index.md
 │   ├── contenidos/
-│   ├── ejercicios/
-│   └── soluciones-<sufijo>/
-├── profesorado/                # Índice de soluciones (fuera del build público)
-├── ca/profesorado/             #    y su versión en valenciano
+│   └── ejercicios/
 ├── …                           # uf2 … uf12, en ambos idiomas
 ├── public/img/
 │   ├── uf1/ … uf12/            # Imágenes separadas por unidad
@@ -45,10 +41,19 @@ src/
 └── .vitepress/
     ├── config.mts              # Configuración VitePress (no suele tocarse)
     └── config/
+        ├── shared.ts           # Contenedores y variables CSS (compartido)
         ├── project.ts          # basePath, idiomas, copyright, licencia
         ├── colors.ts           # Paleta
         ├── logos.ts            # Logos y alturas
         └── units.ts            # 👤 Unidades, sidebars y navbar acumulativo
+
+soluciones/                     # ── Segundo sitio: soluciones del profesorado ──
+├── .vitepress/
+│   ├── config.mts              # Config propia; reutiliza tema y config de src/
+│   ├── config/ruta.ts          # 🔑 RUTA_PRIVADA — la dirección secreta
+│   └── theme/index.ts          # Re-exporta el tema del temario
+├── index.md                    # Índice de soluciones
+└── uf2/ … uf11/                # Las 12 soluciones
 ```
 
 ### Códigos de unidad
@@ -72,47 +77,56 @@ VitePress sirve el sidebar según el prefijo de la URL, así que ambos idiomas c
 
 ---
 
-## Soluciones y material del profesorado
+## Soluciones del profesorado
 
-Las soluciones **no se publican en el sitio del alumnado**. No están ocultas: no se construyen.
+Las soluciones son un **segundo sitio VitePress**, publicado dentro del sitio del temario bajo
+una ruta privada de 20 caracteres aleatorios (`soluciones/.vitepress/config/ruta.ts`):
 
-```bash
-npm run dev             # sitio del alumnado (sin soluciones)
-npm run build           # ídem — es lo que ejecuta GitHub Actions
-
-npm run dev:profesorado    # con soluciones y /profesorado/
-npm run build:profesorado  # ídem, build completo
+```
+https://<dominio>/programacion/           ← temario, para el alumnado
+https://<dominio>/programacion/<20 chars>/ ← soluciones, para el profesorado
 ```
 
-`config.mts` aplica `srcExclude: ['**/soluciones-*/**', '**/profesorado/**']` salvo que se
-construya con `SOLUCIONES=1`, y `units.ts` añade el grupo `✅ Solucions` al sidebar bajo la
-misma condición. El índice para el profesorado está en `src/profesorado/soluciones2627.md`
-(y su versión valenciana), con el enlace a cada solución.
+```bash
+npm run build            # construye el temario y, después, las soluciones
+npm run dev              # temario en local
+npm run dev:soluciones   # soluciones en local
+```
 
-### Por qué no basta con ocultar la ruta
+Se ven exactamente igual que el resto del curso: el sitio de soluciones reexporta el tema de
+`src/.vitepress/theme` y comparte contenedores y variables CSS vía `src/.vitepress/config/shared.ts`,
+así que pestañas, diagramas Mermaid, modo oscuro y exportación a PDF funcionan igual.
 
-VitePress inyecta `__VP_HASH_MAP__` —el mapa de **todas** las rutas del sitio— en el HTML de
-cada página, y además escribe `hashmap.json` en la raíz del build. Cualquier página construida
-es localizable con «ver código fuente» en la portada, por muy aleatorio que sea el nombre de su
-carpeta y aunque no la enlace nadie. Antes de este cambio, la portada exponía las 24 rutas de
-soluciones. Por eso la protección es `srcExclude`: sin páginas, no hay rutas que filtrar.
+### Por qué dos sitios y no una carpeta oculta
 
-Cada unidad usa además una carpeta `soluciones-<16 caracteres aleatorios>`, distinta en cada
-unidad, como capa adicional por si el build del profesorado llegara a servirse sin control de
-acceso delante. Es defensa en profundidad, no la protección principal.
+VitePress inyecta el mapa de **todas** las rutas de un sitio (`__VP_HASH_MAP__`) en el HTML de
+cada una de sus páginas, y además escribe `hashmap.json` en la raíz del build. Cualquier página
+de un sitio es localizable con «ver código fuente» en su portada, por muy aleatorio que sea el
+nombre de su carpeta y aunque no la enlace nadie. Ofuscar el nombre no sirve: el mapa lista la
+ruta entera, sufijo incluido.
 
-### Si quieres las soluciones accesibles online
-
-Lo robusto es autenticar, no ocultar: despliega el build del profesorado en un hostname aparte
-protegido con Cloudflare Access, el mismo patrón que usa `introduccion-laravel`
-(`functions/_middleware.js` cierra los dominios `*.pages.dev` para que el contenido solo salga
-por el dominio propio, donde Access valida la identidad antes de servir el asset).
-
-Comprobación rápida de que el build público no filtra nada:
+Al ser un sitio VitePress **independiente**, su mapa contiene solo sus propias páginas. El sitio
+del alumnado no sabe que existe. Verificado en cada build:
 
 ```bash
-npm run build && grep -ril "soluciones-" docs/ | wc -l   # debe dar 0
+npm run build
+grep -rl "$(grep -oP "(?<=RUTA_PRIVADA = ')[^']+" soluciones/.vitepress/config/ruta.ts)" \
+  docs --exclude-dir="$(grep -oP "(?<=RUTA_PRIVADA = ')[^']+" soluciones/.vitepress/config/ruta.ts)" \
+  | wc -l    # debe dar 0
 ```
+
+Los ficheros fuente viven en `soluciones/`, **fuera de `src/`**, así que no pueden colarse en el
+sitio del alumnado ni por descuido. Las páginas privadas llevan además `noindex, nofollow`.
+
+### Reglas de uso
+
+- **No enlaces la ruta privada** desde ninguna página del curso ni desde el aula virtual.
+  Compártela solo con el profesorado y por un canal privado.
+- **Para rotarla**: cambia `RUTA_PRIVADA` y vuelve a desplegar. La ruta antigua desaparece,
+  porque `docs/` se regenera entero en cada build.
+- Esto es ocultación, no autenticación: quien tenga la dirección entra. Si necesitas control
+  real de acceso, protege esa ruta con Cloudflare Access (el patrón de `introduccion-laravel`,
+  con `functions/_middleware.js` cerrando los dominios `*.pages.dev`).
 
 ---
 
