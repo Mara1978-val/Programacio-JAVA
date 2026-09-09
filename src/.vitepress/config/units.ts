@@ -66,7 +66,7 @@ const sidebarUF1_ES: DefaultTheme.SidebarItem[] = [
     text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/7-exercicis' },
+      { text: 'Ejercicios', link: '/ejercicios/7-exercicis' },
     ]
   },
 ]
@@ -88,7 +88,7 @@ const sidebarUF1_CA: DefaultTheme.SidebarItem[] = [
     text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/7-exercicis' },
+      { text: 'Exercicis', link: '/ejercicios/7-exercicis' },
     ]
   },
 ]
@@ -109,11 +109,17 @@ const sidebarUF2_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Enunciados', link: '/ejercicios/7-enunciats' },
-      { text: '✅ Soluciones', link: '/ejercicios/Solucions' },
+      { text: 'Enunciados', link: '/ejercicios/7-enunciats' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/Solucions' },
     ]
   },
 ]
@@ -133,11 +139,17 @@ const sidebarUF2_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Enunciats', link: '/ejercicios/7-enunciats' },
-      { text: '✅ Solucions', link: '/ejercicios/Solucions' },
+      { text: 'Enunciats', link: '/ejercicios/7-enunciats' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/Solucions' },
     ]
   },
 ]
@@ -160,8 +172,8 @@ const sidebarUF3_1_ES: DefaultTheme.SidebarItem[] = [
     text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Opción 1: Guía de configuración de VSC', link: '/ejercicios/7-guia_vsc' },
-      { text: '✏️ Opción 2: Guía de configuración de NetBeans', link: '/ejercicios/8-guia_netbeans' },
+      { text: 'Opción 1: Guía de configuración de VSC', link: '/ejercicios/7-guia_vsc' },
+      { text: 'Opción 2: Guía de configuración de NetBeans', link: '/ejercicios/8-guia_netbeans' },
     ]
   },
 ]
@@ -183,8 +195,8 @@ const sidebarUF3_1_CA: DefaultTheme.SidebarItem[] = [
     text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Opció 1: Guia de configuració de VSC', link: '/ejercicios/7-guia_vsc' },
-      { text: '✏️ Opció 2: Guia de configuració de NetBeans', link: '/ejercicios/8-guia_netbeans' },
+      { text: 'Opció 1: Guia de configuració de VSC', link: '/ejercicios/7-guia_vsc' },
+      { text: 'Opció 2: Guia de configuració de NetBeans', link: '/ejercicios/8-guia_netbeans' },
     ]
   },
 ]
@@ -217,11 +229,17 @@ const sidebarUF3_2_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/10-exercicis' },
-      { text: '✅ Soluciones', link: '/ejercicios/14-solucions' },
+      { text: 'Ejercicios', link: '/ejercicios/10-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/14-solucions' },
     ]
   },
 ]
@@ -253,11 +271,17 @@ const sidebarUF3_2_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/10-exercicis' },
-      { text: '✅ Solucions', link: '/ejercicios/14-solucions' },
+      { text: 'Exercicis', link: '/ejercicios/10-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/14-solucions' },
     ]
   },
 ]
@@ -283,13 +307,19 @@ const sidebarUF4_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/6-exercicis' },
-      { text: '✏️ Tarea adicional', link: '/ejercicios/9-tasca-adicional' },
-      { text: '✅ Soluciones', link: '/ejercicios/8-solucions' },
-      { text: '✅ Solución de la tarea adicional', link: '/ejercicios/9-tasca-adicional-solucio' },
+      { text: 'Ejercicios', link: '/ejercicios/6-exercicis' },
+      { text: 'Tarea adicional', link: '/ejercicios/9-tasca-adicional' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/8-solucions' },
+      { text: 'Solución de la tarea adicional', link: '/soluciones/9-tasca-adicional-solucio' },
     ]
   },
 ]
@@ -314,13 +344,19 @@ const sidebarUF4_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/6-exercicis' },
-      { text: '✏️ Tasca addicional', link: '/ejercicios/9-tasca-adicional' },
-      { text: '✅ Solucions', link: '/ejercicios/8-solucions' },
-      { text: '✅ Solució de la tasca addicional', link: '/ejercicios/9-tasca-adicional-solucio' },
+      { text: 'Exercicis', link: '/ejercicios/6-exercicis' },
+      { text: 'Tasca addicional', link: '/ejercicios/9-tasca-adicional' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/8-solucions' },
+      { text: 'Solució de la tasca addicional', link: '/soluciones/9-tasca-adicional-solucio' },
     ]
   },
 ]
@@ -351,11 +387,17 @@ const sidebarUF5_1_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/9-exercicis' },
-      { text: '✅ Soluciones', link: '/ejercicios/13-solucions' },
+      { text: 'Ejercicios', link: '/ejercicios/9-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/13-solucions' },
     ]
   },
 ]
@@ -385,11 +427,17 @@ const sidebarUF5_1_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/9-exercicis' },
-      { text: '✅ Solucions', link: '/ejercicios/13-solucions' },
+      { text: 'Exercicis', link: '/ejercicios/9-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/13-solucions' },
     ]
   },
 ]
@@ -406,11 +454,17 @@ const sidebarUF5_2_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/4-exercicis' },
-      { text: '✅ Soluciones', link: '/ejercicios/5-solucions' },
+      { text: 'Ejercicios', link: '/ejercicios/4-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/5-solucions' },
     ]
   },
 ]
@@ -426,11 +480,17 @@ const sidebarUF5_2_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/4-exercicis' },
-      { text: '✅ Solucions', link: '/ejercicios/5-solucions' },
+      { text: 'Exercicis', link: '/ejercicios/4-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/5-solucions' },
     ]
   },
 ]
@@ -459,11 +519,17 @@ const sidebarUF6_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/9-exercicis' },
-      { text: '✅ Soluciones', link: '/ejercicios/11-solucions' },
+      { text: 'Ejercicios', link: '/ejercicios/9-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/11-solucions' },
     ]
   },
 ]
@@ -491,11 +557,17 @@ const sidebarUF6_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/9-exercicis' },
-      { text: '✅ Solucions', link: '/ejercicios/11-solucions' },
+      { text: 'Exercicis', link: '/ejercicios/9-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/11-solucions' },
     ]
   },
 ]
@@ -528,11 +600,17 @@ const sidebarUF7_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/10-exercicis' },
-      { text: '✅ Soluciones', link: '/ejercicios/15-solucions' },
+      { text: 'Ejercicios', link: '/ejercicios/10-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/15-solucions' },
     ]
   },
 ]
@@ -564,11 +642,17 @@ const sidebarUF7_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/10-exercicis' },
-      { text: '✅ Solucions', link: '/ejercicios/15-solucions' },
+      { text: 'Exercicis', link: '/ejercicios/10-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/15-solucions' },
     ]
   },
 ]
@@ -595,11 +679,17 @@ const sidebarUF8_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/7-exercicis' },
-      { text: '✅ Soluciones', link: '/ejercicios/9-solucions' },
+      { text: 'Ejercicios', link: '/ejercicios/7-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/9-solucions' },
     ]
   },
 ]
@@ -625,11 +715,17 @@ const sidebarUF8_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/7-exercicis' },
-      { text: '✅ Solucions', link: '/ejercicios/9-solucions' },
+      { text: 'Exercicis', link: '/ejercicios/7-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/9-solucions' },
     ]
   },
 ]
@@ -649,11 +745,17 @@ const sidebarUF9_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/7-exercicis' },
-      { text: '✅ Soluciones', link: '/ejercicios/8-solucions' },
+      { text: 'Ejercicios', link: '/ejercicios/7-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/8-solucions' },
     ]
   },
 ]
@@ -672,11 +774,17 @@ const sidebarUF9_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/7-exercicis' },
-      { text: '✅ Solucions', link: '/ejercicios/8-solucions' },
+      { text: 'Exercicis', link: '/ejercicios/7-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/8-solucions' },
     ]
   },
 ]
@@ -694,11 +802,17 @@ const sidebarUF10_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/5-exercicis' },
-      { text: '✅ Soluciones', link: '/ejercicios/6-solucions' },
+      { text: 'Ejercicios', link: '/ejercicios/5-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/6-solucions' },
     ]
   },
 ]
@@ -715,11 +829,17 @@ const sidebarUF10_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/5-exercicis' },
-      { text: '✅ Solucions', link: '/ejercicios/6-solucions' },
+      { text: 'Exercicis', link: '/ejercicios/5-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/6-solucions' },
     ]
   },
 ]
@@ -752,11 +872,17 @@ const sidebarUF11_ES: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Ejercicios y soluciones',
+    text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/8-exercicis' },
-      { text: '✅ Soluciones', link: '/ejercicios/13-solucions' },
+      { text: 'Ejercicios', link: '/ejercicios/8-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Soluciones',
+    collapsed: false,
+    items: [
+      { text: 'Soluciones', link: '/soluciones/13-solucions' },
     ]
   },
 ]
@@ -788,11 +914,17 @@ const sidebarUF11_CA: DefaultTheme.SidebarItem[] = [
     ]
   },
   {
-    text: '✏️ Exercicis i solucions',
+    text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/8-exercicis' },
-      { text: '✅ Solucions', link: '/ejercicios/13-solucions' },
+      { text: 'Exercicis', link: '/ejercicios/8-exercicis' },
+    ]
+  },
+  {
+    text: '✅ Solucions',
+    collapsed: false,
+    items: [
+      { text: 'Solucions', link: '/soluciones/13-solucions' },
     ]
   },
 ]
@@ -821,7 +953,7 @@ const sidebarUF12_ES: DefaultTheme.SidebarItem[] = [
     text: '✏️ Ejercicios',
     collapsed: false,
     items: [
-      { text: '✏️ Ejercicios', link: '/ejercicios/7-exercicis' },
+      { text: 'Ejercicios', link: '/ejercicios/7-exercicis' },
     ]
   },
 ]
@@ -849,7 +981,7 @@ const sidebarUF12_CA: DefaultTheme.SidebarItem[] = [
     text: '✏️ Exercicis',
     collapsed: false,
     items: [
-      { text: '✏️ Exercicis', link: '/ejercicios/7-exercicis' },
+      { text: 'Exercicis', link: '/ejercicios/7-exercicis' },
     ]
   },
 ]

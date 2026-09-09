@@ -29,11 +29,13 @@ src/
 │   └── uf1/                    # ── Contenido real (valenciano) ──
 │       ├── index.md            #    Portada de la unidad
 │       ├── contenidos/         #    Teoría y contenidos adicionales
-│       └── ejercicios/         #    Enunciados y soluciones
+│       ├── ejercicios/         #    Enunciados
+│       └── soluciones/         #    Soluciones (grupo de sidebar aparte)
 ├── uf1/                        # ── Español (avisos de traducción) ──
 │   ├── index.md
 │   ├── contenidos/
-│   └── ejercicios/
+│   ├── ejercicios/
+│   └── soluciones/
 ├── …                           # uf2 … uf12, en ambos idiomas
 ├── public/img/
 │   ├── uf1/ … uf12/            # Imágenes separadas por unidad
@@ -63,7 +65,7 @@ VitePress sirve el sidebar según el prefijo de la URL, así que ambos idiomas c
 ## Navegación
 
 - **Navbar acumulativo** — el desplegable **📚 Unidades / Unitats** muestra la unidad en la que estás y **todas las anteriores**. Lo pinta `DynamicNav.vue` leyendo `unitNavbars` de `config/units.ts` según la URL actual: el alumno no ve unidades que aún no se han impartido, pero siempre puede volver a las ya vistas.
-- **Sidebar por unidad** — contenidos, contenidos adicionales y ejercicios/soluciones de la unidad abierta.
+- **Sidebar por unidad** — cuatro grupos independientes: contenidos, contenidos adicionales, ejercicios y soluciones. Enunciados y soluciones están separados en carpeta y grupo distintos, de modo que se pueden ocultar o restringir las soluciones sin tocar los enunciados. Las UF1, UF3.1 y UF12 no tienen soluciones y no muestran ese grupo.
 - **Selector de idioma** — lo genera VitePress a partir de `locales` en `config.mts`; mantiene la página en la que estás al cambiar de idioma.
 
 ---
@@ -87,7 +89,7 @@ docker compose up vitepress
 
 ## Añadir una página
 
-1. Crea el `.md` en `src/ca/<uf>/contenidos/` (o `ejercicios/`).
+1. Crea el `.md` en `src/ca/<uf>/contenidos/` (o `ejercicios/`, o `soluciones/`).
 2. Crea su aviso de traducción en `src/<uf>/contenidos/` con el mismo nombre.
 3. Añade ambos enlaces al sidebar de la unidad en `src/.vitepress/config/units.ts`.
 

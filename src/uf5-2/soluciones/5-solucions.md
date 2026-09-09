@@ -8,4 +8,4 @@ title: "✅ Soluciones"
 Estamos trabajando para ofrecer la versión en español con el nivel y la calidad que os merecéis. Este módulo fue impartido originalmente en valenciano en el centro docente y lo estamos adaptando progresivamente. Gracias por tu paciencia.
 :::
 
-[Ver contenido en valenciano →](/ca/uf11/ejercicios/13-solucions)
+[Ver contenido en valenciano →](/ca/uf5-2/soluciones/5-solucions)
