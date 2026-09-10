@@ -38,10 +38,14 @@ export const LOGOS = {
   // Estos logos aparecen en el sidebar (debajo del menú) y en el footer.
   // Ajusta las alturas según el tamaño y proporción de tus imágenes.
   // Usa unidades CSS: 'px', 'rem', '%', etc.
+  // Nota: la altura es la de la CAJA de la imagen, no la del dibujo. Si el PNG
+  // lleva margen transparente alrededor, el logo se ve pequeño aunque la altura
+  // sea grande. Recorta el margen (`convert x.png -trim +repage x.png`) antes
+  // de tocar estos valores.
   heights: {
-    gva:    '100px',   // Logo de la Generalitat Valenciana / institución
-    centro: '90px',   // Logo del centro educativo
-    footer: '100px',   // Logo del pie de página (versión compacta del autor)
+    gva:    '60px',   // Logo de la Generalitat Valenciana / institución
+    centro: '85px',   // Logo del centro educativo
+    footer: '60px',   // Logo del pie de página
   },
 
 }
