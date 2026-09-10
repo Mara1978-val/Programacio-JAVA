@@ -4,12 +4,17 @@ outline: [2, 3]
 
 # Programación (PRO) {.page-title}
 
-![Logo del módulo de Programación](/img/logo.png){logo}
+![Logo del módulo de Programación](/img/logo_index.png){logo}
 
 ---
 
 ::: tip-box Información del módulo
 **Autores:** Guillermo Garrido Portes / David Tur Sanmateu
+**Modificado por:**
+-  **25-26:** Mariab Bañuls Ribes / Sergio Perez Rubio
+-  **26-27:** Mara Vaño Alonso
+
+**Colaboradores:** Abelardo Martínez Serrano / Eva Mª Gómez Abad
 
 **Curso:** 2026
 

@@ -4,12 +4,17 @@ outline: [2, 3]
 
 # Programació (PRO) {.page-title}
 
-![Logo del mòdul de Programació](/img/logo.png){logo}
+![Logo del mòdul de Programació](/img/logo_index.png){logo}
 
 ---
 
 ::: tip-box Informació del mòdul
 **Autors:** Guillermo Garrido Portes / David Tur Sanmateu
+**Modificat per:**
+-  **25-26:** Mariab Bañuls Ribes / Sergio Perez Rubio
+-  **26-27:** Mara Vaño Alonso
+
+**Colaboradors:** Abelardo Martínez Serrano / Eva Mª Gómez Abad
 
 **Curs:** 2026
 
