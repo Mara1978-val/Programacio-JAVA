@@ -1,51 +1,86 @@
 ---
 layout: doc
-title: "Solucions 26/27"
+title: "Índice del profesorado 26/27"
 outline: false
 ---
 
 <script setup>
 import { useData } from 'vitepress'
 const { theme } = useData()
-const indice = theme.value.indiceSolucions
+const indice = theme.value.indiceProfesorado
 </script>
 
-# 🔑 Solucions 26/27 {.page-title}
+# 🗝️ Índice del profesorado 26/27 {.page-title}
 
-::: danger Aquesta adreça és només per al professorat
-Cada unitat té la seua **pròpia adreça privada**, independent de les altres.
-Aquesta pàgina és l'única que les coneix totes.
+Punto de entrada al curso: desde aquí se llega al temario del alumnado en los
+dos idiomas y a las soluciones de cada unidad.
 
-- Per a compartir una solució amb l'alumnat, dona-li **l'enllaç d'eixa unitat**.
-  Qui el reba no pot arribar ni a les altres solucions ni a aquesta pàgina: cada
-  unitat és un lloc separat i el seu codi font no menciona cap altra adreça.
-- **No compartisques mai aquesta adreça.**
-- Per a rotar la ruta d'una unitat, canvia el seu codi en
-  `soluciones/_shared/rutas.ts` i torna a desplegar.
+::: danger Esta dirección es solo para el profesorado
+Cada unidad tiene su **propia dirección privada** para las soluciones,
+independiente de las demás. Esta página es la única que las conoce todas.
+
+- Para compartir una solución con el alumnado, dale **el enlace de esa unidad**.
+  Quien lo reciba no puede llegar ni a las otras soluciones ni a esta página:
+  cada unidad es un sitio separado y su código fuente no menciona ninguna otra
+  dirección.
+- **No compartas nunca esta dirección.**
+- Para rotar la ruta de una unidad, cambia su código en
+  `soluciones/_shared/rutas.ts` y vuelve a desplegar.
+
+Los enlaces al temario sí son públicos: son las mismas páginas que ve el alumnado.
 :::
 
-::: tip Per què s'obrin en una pestanya nova
-Cada unitat és un lloc VitePress independent. El router de VitePress intercepta
-els enllaços del mateix domini i intenta resoldre'ls amb el mapa de rutes del
-lloc actual —que no coneix les altres unitats—, així que sense `target="_blank"`
-el clic acabaria en un 404. **No lleves l'atribut.**
+::: tip Por qué se abren en una pestaña nueva
+Cada unidad es un sitio VitePress independiente. El router de VitePress
+intercepta los enlaces del mismo dominio e intenta resolverlos con el mapa de
+rutas del sitio actual —que no conoce ni el temario ni las otras unidades—, así
+que sin `target="_blank"` el clic acabaría en un 404. **No quites el atributo.**
 :::
 
-## Índex
+## Unidades
 
-<table>
+<table class="indice-profesorado">
   <thead>
-    <tr><th>Unitat</th><th>Títol</th><th>Solucions</th></tr>
+    <tr>
+      <th>UF</th>
+      <th>Temario · castellano</th>
+      <th>Temari · valencià</th>
+      <th>Soluciones</th>
+    </tr>
   </thead>
   <tbody>
     <tr v-for="u in indice" :key="u.clave">
-      <td><strong>{{ u.unidad }}</strong></td>
-      <td>{{ u.titulo }}</td>
+      <td class="uf"><strong>{{ u.icono }} {{ u.unidad }}</strong></td>
+      <td><a :href="u.es.url" target="_blank" rel="noopener">{{ u.es.text }} ↗</a></td>
+      <td><a :href="u.ca.url" target="_blank" rel="noopener">{{ u.ca.text }} ↗</a></td>
       <td>
-        <span v-for="(p, i) in u.pagines" :key="p.slug">
-          <span v-if="i > 0"> · </span><a :href="p.url" target="_blank" rel="noopener">{{ p.text }} ↗</a>
-        </span>
+        <template v-if="u.soluciones.length">
+          <span v-for="(s, i) in u.soluciones" :key="s.url">
+            <span v-if="i > 0"> · </span><a :href="s.url" target="_blank" rel="noopener">🔑 {{ s.text }} ↗</a>
+          </span>
+        </template>
+        <span v-else class="sin-solucions">—</span>
       </td>
     </tr>
   </tbody>
 </table>
+
+<style scoped>
+.indice-profesorado {
+  display: table;
+  width: 100%;
+}
+/* El tema justifica el texto del contenido; en columnas estrechas deja huecos. */
+.indice-profesorado th,
+.indice-profesorado td {
+  text-align: left;
+  vertical-align: top;
+}
+.indice-profesorado .uf {
+  white-space: nowrap;
+  width: 1%;
+}
+.indice-profesorado .sin-solucions {
+  color: var(--vp-c-text-3);
+}
+</style>

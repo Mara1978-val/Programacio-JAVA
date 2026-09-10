@@ -33,6 +33,8 @@ export interface OpcionesSitio {
   /** Título de la pestaña del navegador y del sidebar. */
   titulo: string
   siteTitle: string
+  /** Idioma del sitio. Las unidades son en valenciano; el índice del profesorado, en castellano. */
+  lang?: string
   /** Sidebar del sitio; vacío si solo tiene una página. */
   sidebar?: any[]
   /** Ítems del navbar. */
@@ -59,7 +61,7 @@ export function crearSitioSoluciones(op: OpcionesSitio) {
   return defineConfig({
     base:   `${PROJECT.basePath}${ruta}/`,
     outDir: `../../docs/${ruta}`,
-    lang:   'ca-ES',
+    lang:   op.lang ?? 'ca-ES',
     title:  op.titulo,
     description: 'Material del professorat',
     head: headTags,

@@ -1,97 +1,111 @@
 // ============================================================================
-// ÍNDICE DE SOLUCIONES
+// ÍNDICE DEL PROFESORADO
 // ============================================================================
-// Alimenta la portada del sitio del profesorado. Las URLs se construyen a
-// partir de RUTAS, así que rotar la ruta de una unidad en rutas.ts actualiza
-// el índice solo: no hay direcciones escritas a mano en ningún .md.
+// Alimenta la portada del sitio del profesorado, desde la que se llega tanto al
+// temario del alumnado (en los dos idiomas) como a las soluciones.
+//
+// De dónde sale cada cosa:
+//   · Los títulos, de UNITS (src/.vitepress/config/units.ts). No se reescriben
+//     aquí, así que renombrar una unidad en el temario actualiza este índice.
+//   · Las URLs de las soluciones, de RUTAS (./rutas.ts). Rotar la ruta de una
+//     unidad allí basta: no hay direcciones escritas a mano en ningún .md.
+//
+// Para dar de alta las soluciones de una unidad nueva, añádela a RUTAS, crea su
+// sitio en soluciones/<clave>/ y apúntala en SOLUCIONES, aquí abajo.
 // ============================================================================
 
+import { UNITS } from '../../src/.vitepress/config/units'
 import { RUTAS } from './rutas'
 
-export interface PaginaSolucio { text: string; slug: string }
-export interface UnitatSolucions {
-  clave: string
-  unidad: string
-  titulo: string
-  pagines: PaginaSolucio[]
+export interface PaginaSolucion {
+  text: string
+  slug: string
 }
 
-export const INDICE: UnitatSolucions[] = [
-  {
-    clave:  'uf2',
-    unidad: 'UF2',
-    titulo: 'Representació d\'Algoritmes',
-    pagines: [{ text: 'Solucions', slug: 'Solucions' }],
-  },
-  {
-    clave:  'uf3-2',
-    unidad: 'UF3.2',
-    titulo: 'Introducció a la Programació II',
-    pagines: [{ text: 'Solucions', slug: '14-solucions' }],
-  },
-  {
-    clave:  'uf4',
-    unidad: 'UF4',
-    titulo: 'Estructures repetitives',
-    pagines: [{ text: 'Solucions', slug: '8-solucions' }, { text: 'Solució de la tasca addicional', slug: '9-tasca-adicional-solucio' }],
-  },
-  {
-    clave:  'uf5-1',
-    unidad: 'UF5.1',
-    titulo: 'Estructures de Dades Dinàmiques I',
-    pagines: [{ text: 'Solucions', slug: '13-solucions' }],
-  },
-  {
-    clave:  'uf5-2',
-    unidad: 'UF5.2',
-    titulo: 'Estructures de Dades Dinàmiques II',
-    pagines: [{ text: 'Solucions', slug: '5-solucions' }],
-  },
-  {
-    clave:  'uf6',
-    unidad: 'UF6',
-    titulo: 'Funcions',
-    pagines: [{ text: 'Solucions', slug: '11-solucions' }],
-  },
-  {
-    clave:  'uf7',
-    unidad: 'UF7',
-    titulo: 'Programació Orientada a Objectes I',
-    pagines: [{ text: 'Solucions', slug: '15-solucions' }],
-  },
-  {
-    clave:  'uf8',
-    unidad: 'UF8',
-    titulo: 'Programació Orientada a Objectes II',
-    pagines: [{ text: 'Solucions', slug: '9-solucions' }],
-  },
-  {
-    clave:  'uf9',
-    unidad: 'UF9',
-    titulo: 'Excepcions',
-    pagines: [{ text: 'Solucions', slug: '8-solucions' }],
-  },
-  {
-    clave:  'uf10',
-    unidad: 'UF10',
-    titulo: 'Persistència de dades I: Fitxers',
-    pagines: [{ text: 'Solucions', slug: '6-solucions' }],
-  },
-  {
-    clave:  'uf11',
-    unidad: 'UF11',
-    titulo: 'Persistència de dades II: Bases de dades',
-    pagines: [{ text: 'Solucions', slug: '13-solucions' }],
-  },
+/**
+ * Orden en que se listan las unidades: el mismo que sigue el temario.
+ * La clave es el `code` de la versión en castellano; la valenciana es 'ca/<clave>'.
+ */
+const ORDEN = [
+  'uf1', 'uf2', 'uf3-1', 'uf3-2', 'uf4', 'uf5-1', 'uf5-2',
+  'uf6', 'uf7', 'uf8', 'uf9', 'uf10', 'uf11', 'uf12',
 ]
 
-/** El índice con la URL absoluta ya resuelta de cada página. */
-export function indiceConEnlaces(basePath: string) {
-  return INDICE.map(u => ({
-    ...u,
-    pagines: u.pagines.map(p => ({
-      ...p,
-      url: `${basePath}${RUTAS[u.clave]}/${p.slug}`,
-    })),
-  }))
+/**
+ * Páginas de soluciones publicadas de cada unidad. Las unidades que no
+ * aparecen aquí salen en el índice con su temario pero sin soluciones.
+ * El slug es el nombre del .md dentro de soluciones/<clave>/.
+ */
+const SOLUCIONES: Record<string, PaginaSolucion[]> = {
+  'uf2':   [{ text: 'Soluciones', slug: 'Solucions' }],
+  'uf3-2': [{ text: 'Soluciones', slug: '14-solucions' }],
+  'uf4':   [
+    { text: 'Soluciones', slug: '8-solucions' },
+    { text: 'Solución de la tarea adicional', slug: '9-tasca-adicional-solucio' },
+  ],
+  'uf5-1': [{ text: 'Soluciones', slug: '13-solucions' }],
+  'uf5-2': [{ text: 'Soluciones', slug: '5-solucions' }],
+  'uf6':   [{ text: 'Soluciones', slug: '11-solucions' }],
+  'uf7':   [{ text: 'Soluciones', slug: '15-solucions' }],
+  'uf8':   [{ text: 'Soluciones', slug: '9-solucions' }],
+  'uf9':   [{ text: 'Soluciones', slug: '8-solucions' }],
+  'uf10':  [{ text: 'Soluciones', slug: '6-solucions' }],
+  'uf11':  [{ text: 'Soluciones', slug: '13-solucions' }],
+}
+
+/** Los títulos de units.ts vienen como 'UF5.1 - Estructuras de Datos Dinámicas I'. */
+function partirTitulo(title: string): { etiqueta: string; nombre: string } {
+  const i = title.indexOf(' - ')
+  if (i === -1) return { etiqueta: title, nombre: title }
+  return { etiqueta: title.slice(0, i), nombre: title.slice(i + 3) }
+}
+
+const porCode = new Map(Object.values(UNITS).map(u => [u.code, u]))
+
+export interface EnlaceIndice { text: string; url: string }
+export interface FilaIndice {
+  clave: string
+  /** 'UF5.1', para la primera columna. */
+  unidad: string
+  icono: string
+  /** Título y URL del temario en cada idioma. */
+  es: EnlaceIndice
+  ca: EnlaceIndice
+  /** Vacío si la unidad todavía no tiene soluciones publicadas. */
+  soluciones: EnlaceIndice[]
+}
+
+/**
+ * El índice con todas las URLs ya resueltas.
+ * @param basePath base del despliegue, con las barras incluidas ('/programacion/').
+ */
+export function indiceProfesorado(basePath: string): FilaIndice[] {
+  return ORDEN.map(clave => {
+    const unidadEs = porCode.get(clave)
+    const unidadCa = porCode.get(`ca/${clave}`)
+    if (!unidadEs || !unidadCa) {
+      throw new Error(`La unidad '${clave}' del índice del profesorado no está en UNITS (units.ts)`)
+    }
+
+    const es = partirTitulo(unidadEs.title)
+    const ca = partirTitulo(unidadCa.title)
+    const ruta = RUTAS[clave]
+    const paginas = SOLUCIONES[clave] ?? []
+
+    if (paginas.length && !ruta) {
+      throw new Error(`La unidad '${clave}' tiene soluciones pero ninguna ruta privada en rutas.ts`)
+    }
+
+    return {
+      clave,
+      unidad: es.etiqueta,
+      icono: unidadEs.icon,
+      es: { text: es.nombre, url: `${basePath}${clave}/` },
+      ca: { text: ca.nombre, url: `${basePath}ca/${clave}/` },
+      soluciones: paginas.map(p => ({
+        text: p.text,
+        url: `${basePath}${ruta}/${p.slug}`,
+      })),
+    }
+  })
 }
