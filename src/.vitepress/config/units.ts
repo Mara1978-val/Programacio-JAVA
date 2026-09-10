@@ -7,8 +7,11 @@
 //
 // ESTRUCTURA DE ESTE CURSO
 //   El módulo es bilingüe. Cada unidad formativa aparece DOS veces:
-//     - Español   → code 'ufN'      → archivos en src/ufN/          (avisos de traducción)
+//     - Español   → code 'ufN'      → archivos en src/es/ufN/       (avisos de traducción)
 //     - Valencià  → code 'ca/ufN'   → archivos en src/ca/ufN/       (contenido completo)
+//   El idioma es siempre el primer nivel de carpeta. `code` es el prefijo de
+//   URL, que NO coincide con la carpeta en castellano: el castellano es la
+//   locale raíz y se publica sin prefijo (ver `rewrites` en config.mts).
 //   VitePress sirve el sidebar según el prefijo de URL, así que ambos conviven
 //   sin colisionar. El selector de idioma del navbar lo genera VitePress a
 //   partir de `locales` en config.mts.
@@ -20,7 +23,7 @@
 //   code          — Prefijo de URL de los archivos de esta unidad.
 //
 // FLUJO RÁPIDO PARA AÑADIR UNA PÁGINA:
-//   1. Crea el .md en src/ca/<uf>/contenidos/ (y su aviso en src/<uf>/contenidos/)
+//   1. Crea el .md en src/ca/<uf>/contenidos/ (y su aviso en src/es/<uf>/contenidos/)
 //   2. Añade el link al sidebar de la unidad, aquí abajo
 //
 // ============================================================================

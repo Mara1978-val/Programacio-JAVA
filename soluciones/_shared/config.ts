@@ -99,6 +99,14 @@ export function crearSitioSoluciones(op: OpcionesSitio) {
   return defineConfig({
     base:   `${PROJECT.basePath}${ruta}/`,
     outDir: `../../docs/${ruta}`,
+    // ESTRUCTURA DE CARPETAS ≠ URLS
+    // Misma regla que el temario (ver src/.vitepress/config.mts): el idioma es
+    // siempre el primer nivel —soluciones/<uf>/ca/ y soluciones/<uf>/es/— pero
+    // el valenciano es la locale raíz y se publica sin prefijo:
+    //     <uf>/ca/Solucions.md  →  /<ruta>/Solucions
+    //     <uf>/es/Solucions.md  →  /<ruta>/es/Solucions
+    // Así las rutas privadas ya compartidas siguen sirviendo la misma página.
+    rewrites: (id: string) => (id.startsWith('ca/') ? id.slice(3) : id),
     title:  op.titulo,
     description: 'Material del professorat',
     head: headTags,

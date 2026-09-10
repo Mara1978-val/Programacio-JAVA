@@ -9,4 +9,4 @@ Este material se elaboró en valenciano en el centro docente y todavía no está
 adaptado al castellano. Gracias por tu paciencia.
 :::
 
-[Ver «Solució de la tasca addicional» en valenciano →](../9-tasca-adicional-solucio)
+[Ver «Solució de la tasca addicional» en valenciano →](../ca/9-tasca-adicional-solucio)

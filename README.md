@@ -21,23 +21,36 @@ El contenido docente completo está en **valenciano**, tal como se impartió. La
 
 ## Estructura
 
+**El idioma es siempre el primer nivel de carpeta**, tanto en el temario como en
+las soluciones. Las URLs no lo reflejan del todo: en cada sitio uno de los dos
+idiomas es la *locale raíz* y se publica sin prefijo. Esa correspondencia la hace
+una regla `rewrites` en la configuración, así que puedes reorganizar carpetas sin
+tocar URLs (y al revés).
+
+| | Carpeta | URL |
+|---|---|---|
+| Temario, castellano (raíz) | `src/es/uf1/` | `/uf1/` |
+| Temario, valencià | `src/ca/uf1/` | `/ca/uf1/` |
+| Soluciones, valencià (raíz) | `soluciones/uf7/ca/` | `/<ruta privada>/` |
+| Soluciones, castellano | `soluciones/uf7/es/` | `/<ruta privada>/es/` |
+
 ```text
-src/
-├── index.md                    # Portada en español
-├── ca/
-│   ├── index.md                # Portada en valenciano
-│   └── uf1/                    # ── Contenido real (valenciano) ──
-│       ├── index.md            #    Portada de la unidad
-│       ├── contenidos/         #    Teoría y contenidos adicionales
-│       └── ejercicios/         #    Enunciados
-├── uf1/                        # ── Español (avisos de traducción) ──
+src/                            # ── Sitio público (alumnado) ──
+├── ca/                         # Valencià — el contenido real
+│   ├── index.md                #   Portada
+│   └── uf1/ … uf12/
+│       ├── index.md            #   Portada de la unidad
+│       ├── contenidos/         #   Teoría y contenidos adicionales
+│       └── ejercicios/         #   Enunciados
+├── es/                         # Español — avisos de traducción, misma forma
 │   ├── index.md
-│   ├── contenidos/
-│   └── ejercicios/
-├── …                           # uf2 … uf12, en ambos idiomas
+│   └── uf1/ … uf12/
+├── _partials/                  # Fragmentos <!--@include:-->, no son páginas
+│   ├── info-modul.md           #   Ficha del módulo (valencià)
+│   └── info-modulo.md          #   Ficha del módulo (castellano)
 ├── public/img/
 │   ├── uf1/ … uf12/            # Imágenes separadas por unidad
-│   └── logo*.png               # Marca: módulo, centro, GVA, autoría
+│   └── logo*.png               # Marca: módulo, centro, GVA
 └── .vitepress/
     ├── config.mts              # Configuración VitePress (no suele tocarse)
     └── config/
@@ -54,13 +67,21 @@ soluciones/                     # ── Un sitio independiente por unidad ─�
 │   └── indice.ts               # Índice que alimenta la portada del profesorado
 ├── profesor/                   # Índice con TODAS las rutas — no compartir
 │   ├── .vitepress/
-│   └── index.md
+│   ├── ca/index.md
+│   └── es/index.md
 ├── uf7/                        # Sitio propio de las soluciones de UF7
 │   ├── .vitepress/
-│   ├── index.md
-│   └── 15-solucions.md
+│   ├── ca/{index.md, 15-solucions.md}
+│   ├── es/{index.md, 15-solucions.md}    # Puentes al material en valencià
+│   └── public/img/logo.png               # Marca de agua al imprimir
 └── uf2/ uf3-2/ uf4/ …          # Una carpeta por unidad con soluciones
 ```
+
+> **Por qué `soluciones/` está fuera de `src/`.** VitePress inyecta el mapa de
+> todas las rutas de un sitio en el HTML de cada una de sus páginas. Si las
+> soluciones vivieran bajo `src/`, lo único que las mantendría fuera del sitio
+> público sería la lista `srcExclude` — una línea de configuración cuyo fallo
+> sería silencioso. Al estar fuera, la separación es física.
 
 ### Códigos de unidad
 
@@ -158,7 +179,7 @@ docker compose up vitepress
 ## Añadir una página
 
 1. Crea el `.md` en `src/ca/<uf>/contenidos/` (o `ejercicios/`, o `soluciones/`).
-2. Crea su aviso de traducción en `src/<uf>/contenidos/` con el mismo nombre.
+2. Crea su aviso de traducción en `src/es/<uf>/contenidos/` con el mismo nombre.
 3. Añade ambos enlaces al sidebar de la unidad en `src/.vitepress/config/units.ts`.
 
 Las imágenes van en `src/public/img/<uf>/` y se referencian como `![alt](/img/<uf>/archivo.png)`.

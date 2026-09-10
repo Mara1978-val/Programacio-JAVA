@@ -80,6 +80,14 @@ export default defineConfig({
   // _partials/ son fragmentos que se insertan con <!--@include: ...-->; no son
   // páginas y no deben tener URL propia ni salir en el mapa de rutas.
   srcExclude: ['_partials/**'],
+  // ESTRUCTURA DE CARPETAS ≠ URLS
+  // El idioma es siempre el primer nivel: src/es/ y src/ca/. Pero el castellano
+  // es la locale raíz, así que se publica sin prefijo. Esta regla quita 'es/'
+  // de la ruta al generar la URL:
+  //     src/es/uf1/index.md  →  /uf1/          src/ca/uf1/index.md  →  /ca/uf1/
+  // Así las carpetas quedan simétricas sin cambiar ninguna URL ya publicada.
+  // VitePress deduce la locale de la URL reescrita, no de la carpeta.
+  rewrites: (id: string) => (id.startsWith('es/') ? id.slice(3) : id),
   vite: VITE_CONFIG,
   markdown: {
     config(md) {
