@@ -18,15 +18,15 @@ Aquesta unitat està dissenyada per aprofundir en els conceptes avançats de la 
 
 Aquesta unitat didàctica té com a objectiu aprofundir en els pilars de la programació orientada a objectes (POO) per a la creació de jerarquies de classes robustes i reutilitzables.
 
-Objectiu 8.1: Comprendre els conceptes d'**herència**, **superclasse** i **subclasse**, i la seva utilitat per a reutilitzar codi.
-Objectiu 8.2: Dissenyar i implementar **jerarquies de classes**, aplicant l'herència per a crear relacions de tipus "és un" (per exemple, un `Cotxe` **és un** `Vehicle`).
-Objectiu 8.3: Utilitzar els modificadors d'accés (com `final` i `abstract`) per a controlar l'herència de classes i mètodes.
-Objectiu 8.4: Entendre com funcionen els **constructors** en les jerarquies d'herència i com cridar el constructor de la superclasse.
-Objectiu 8.5: Implementar el concepte de **polimorfisme** mitjançant la sobrescriptura de mètodes (`@Override`) de la superclasse.
-Objectiu 8.6: Identificar les característiques i els escenaris d'ús de les **classes abstractes** i les **interfícies**.
-Objectiu 8.7: Emprar l'operador **`instanceof`** per a comprovar el tipus d'un objecte en temps d'execució.
-Objectiu 8.8: Comentar i documentar el codi de les classes i les seves jerarquies per a millorar-ne la llegibilitat i el manteniment.
-Objectiu 8.9: Crear classes i mètodes genèrics per a millorar la reutilització del codi i la seva flexibilitat.
+- Objectiu 8.1: Comprendre els conceptes d'**herència**, **superclasse** i **subclasse**, i la seva utilitat per a reutilitzar codi.
+- Objectiu 8.2: Dissenyar i implementar **jerarquies de classes**, aplicant l'herència per a crear relacions de tipus "és un" (per exemple, un `Cotxe` **és un** `Vehicle`).
+- Objectiu 8.3: Utilitzar els modificadors d'accés (com `final` i `abstract`) per a controlar l'herència de classes i mètodes.
+- Objectiu 8.4: Entendre com funcionen els **constructors** en les jerarquies d'herència i com cridar el constructor de la superclasse.
+- Objectiu 8.5: Implementar el concepte de **polimorfisme** mitjançant la sobrescriptura de mètodes (`@Override`) de la superclasse.
+- Objectiu 8.6: Identificar les característiques i els escenaris d'ús de les **classes abstractes** i les **interfícies**.
+- Objectiu 8.7: Emprar l'operador **`instanceof`** per a comprovar el tipus d'un objecte en temps d'execució.
+- Objectiu 8.8: Comentar i documentar el codi de les classes i les seves jerarquies per a millorar-ne la llegibilitat i el manteniment.
+- Objectiu 8.9: Crear classes i mètodes genèrics per a millorar la reutilització del codi i la seva flexibilitat.
 
 ---
 

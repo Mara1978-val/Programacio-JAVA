@@ -49,6 +49,8 @@ Aquesta unitat didàctica té com a objectiu principal introduir l'alumne en els
 | **RA04.h**: S'han creat i utilitzat mètodes estàtics. | **Objectiu 7.6** |
 | **RA04.i**: S'han creat i utilitzat conjunts i llibreries de classes. | **Objectiu 7.9** |
 
+:::
+
 ## ⚙ Metodologia {.animate-title}
 
 ::: tip Aprenentatge Actiu

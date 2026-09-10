@@ -18,13 +18,13 @@ Aquesta unitat està dissenyada per introduir-vos al maneig d’excepcions en la
 
 Aquesta unitat didàctica té com a objectiu que l'alumnat aprengui a gestionar i controlar els errors que poden ocórrer durant l'execució d'un programa, millorant-ne així la robustesa i la fiabilitat.
 
-Objectiu 9.1: Comprendre el concepte d'**excepció** i el seu ús com a mecanisme per a gestionar situacions anòmales en un programa.
-Objectiu 9.2: Escriure codi per a **llançar excepcions** (`throw`) quan es detecta un problema.
-Objectiu 9.3: Implementar blocs **`try-catch`** per a **manejar excepcions** i evitar que el programa s'aturi de manera inesperada.
-Objectiu 9.4: Conèixer la **jerarquia i els tipus d'excepcions** per a poder gestionar-les de manera més específica.
-Objectiu 9.5: **Crear excepcions pròpies** per a representar errors personalitzats i adaptar-se millor a les necessitats d'una aplicació.
-Objectiu 9.6: Utilitzar **asserions** per a la detecció i correcció d'errors lògics durant la fase de desenvolupament.
-Objectiu 9.7: Provant i depurant programes amb gestió d'excepcions per assegurar-ne el correcte funcionament.
+- Objectiu 9.1: Comprendre el concepte d'**excepció** i el seu ús com a mecanisme per a gestionar situacions anòmales en un programa.
+- Objectiu 9.2: Escriure codi per a **llançar excepcions** (`throw`) quan es detecta un problema.
+- Objectiu 9.3: Implementar blocs **`try-catch`** per a **manejar excepcions** i evitar que el programa s'aturi de manera inesperada.
+- Objectiu 9.4: Conèixer la **jerarquia i els tipus d'excepcions** per a poder gestionar-les de manera més específica.
+- Objectiu 9.5: **Crear excepcions pròpies** per a representar errors personalitzats i adaptar-se millor a les necessitats d'una aplicació.
+- Objectiu 9.6: Utilitzar **asserions** per a la detecció i correcció d'errors lògics durant la fase de desenvolupament.
+- Objectiu 9.7: Provant i depurant programes amb gestió d'excepcions per assegurar-ne el correcte funcionament.
 
 ---
 

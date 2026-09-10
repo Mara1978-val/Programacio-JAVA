@@ -21,10 +21,10 @@ outline: [2, 3]
 
 Aquest tema aborda els conceptes actuals sobre com es creen interfícies gràfiques d'usuari (GUI) en aplicacions modernes.
 
-* **Objectiu 12.1:** Reconèixer les possibilitats d'entrada/eixida del llenguatge i les llibreries associades per a la creació d'interfícies (CLI, GUI i Web).
-* **Objectiu 12.2:** Utilitzar les ferramentes de l'entorn de desenvolupament per a dissenyar i crear interfícies gràfiques d'usuari simples basades en components.
-* **Objectiu 12.3:** Programar controladors d'esdeveniments per a gestionar la interacció de la persona usuària amb els components d'acció de la interfície.
-* **Objectiu 12.4:** Desenvolupar programes que utilitzen interfícies gràfiques (vistes) per a l'entrada de dades i la visualització de la informació (model).
+- **Objectiu 12.1:** Reconèixer les possibilitats d'entrada/eixida del llenguatge i les llibreries associades per a la creació d'interfícies (CLI, GUI i Web).
+- **Objectiu 12.2:** Utilitzar les ferramentes de l'entorn de desenvolupament per a dissenyar i crear interfícies gràfiques d'usuari simples basades en components.
+- **Objectiu 12.3:** Programar controladors d'esdeveniments per a gestionar la interacció de la persona usuària amb els components d'acció de la interfície.
+- **Objectiu 12.4:** Desenvolupar programes que utilitzen interfícies gràfiques (vistes) per a l'entrada de dades i la visualització de la informació (model).
 
 ---
 
