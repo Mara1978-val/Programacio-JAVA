@@ -30,17 +30,33 @@ const assets = PROJECT.basePath
 export interface OpcionesSitio {
   /** Clave en RUTAS: el código de la unidad, o 'profesor' para el índice. */
   clave: string
-  /** Título de la pestaña del navegador y del sidebar. */
+  /** Título (pestaña del navegador) y siteTitle (navbar) en valenciano. */
   titulo: string
   siteTitle: string
-  /** Idioma del sitio. Las unidades son en valenciano; el índice del profesorado, en castellano. */
-  lang?: string
-  /** Sidebar del sitio; vacío si solo tiene una página. */
+  /** Los mismos en castellano. Si no se dan, se reutilizan los valencianos. */
+  tituloEs?: string
+  siteTitleEs?: string
+  /**
+   * Sidebar en valenciano, con enlaces relativos a la raíz del sitio
+   * ('/8-solucions'). El de castellano se deriva prefijando '/es'.
+   * Vacío si el sitio solo tiene una página.
+   */
   sidebar?: any[]
+  /** Igual que sidebar, pero con los textos en castellano. */
+  sidebarEs?: any[]
   /** Ítems del navbar. */
   nav?: any[]
   /** Claves extra que se mezclan en themeConfig (las leen los componentes). */
   extraTheme?: Record<string, unknown>
+}
+
+/** Reapunta los enlaces de un sidebar al prefijo de la locale castellana. */
+function conPrefijoEs(items: any[]): any[] {
+  return items.map(i => ({
+    ...i,
+    ...(i.link  ? { link: `/es${i.link}` } : {}),
+    ...(i.items ? { items: conPrefijoEs(i.items) } : {}),
+  }))
 }
 
 export function crearSitioSoluciones(op: OpcionesSitio) {
@@ -58,13 +74,65 @@ export function crearSitioSoluciones(op: OpcionesSitio) {
     headTags.push(['link', { rel: 'stylesheet', href: COLORS.typography.fontImportUrl }])
   }
 
+  // Comunes a las dos locales: solo cambian los textos de la interfaz.
+  const temaComun = {
+    logoBranding: {
+      mode:       LOGOS.mode,
+      darkSuffix: LOGOS.darkSuffix,
+      logos: {
+        gva:    { src: `${assets}img/logo-gva.png`,    height: LOGOS.heights.gva    },
+        centro: { src: `${assets}img/logo-centro.png`, height: LOGOS.heights.centro },
+        footer: { src: `${assets}img/logo-centro.png`,  height: LOGOS.heights.footer },
+      },
+    },
+    copyright: PROJECT.copyright,
+    license: { text: PROJECT.license.text, url: PROJECT.license.url, icon: '' },
+    // PrintWatermark.vue aplica withBase() al logo, así que la ruta ha de ser
+    // relativa a ESTE sitio: de ahí la copia en public/img/ de cada uno.
+    printWatermark: { logo: '/img/logo.png', opacity: 0.10 },
+    ...(op.extraTheme ?? {}),
+  }
+
+  const sidebarCa = op.sidebar ?? []
+  const sidebarEs = op.sidebarEs ?? sidebarCa
+
   return defineConfig({
     base:   `${PROJECT.basePath}${ruta}/`,
     outDir: `../../docs/${ruta}`,
-    lang:   op.lang ?? 'ca-ES',
     title:  op.titulo,
     description: 'Material del professorat',
     head: headTags,
+    // El valenciano se queda en la raíz para no invalidar las rutas privadas
+    // ya compartidas; el castellano cuelga de /es/.
+    locales: {
+      root: {
+        label: 'Valencià',
+        lang:  'ca-ES',
+        title: op.titulo,
+        themeConfig: {
+          ...temaComun,
+          siteTitle: op.siteTitle,
+          outline:   { label: 'En aquesta pàgina', level: [2, 3] },
+          docFooter: { prev: 'Anterior', next: 'Següent' },
+          nav: op.nav ?? [],
+          sidebar: sidebarCa,
+        } as any,
+      },
+      es: {
+        label: 'Español',
+        lang:  'es-ES',
+        link:  '/es/',
+        title: op.tituloEs ?? op.titulo,
+        themeConfig: {
+          ...temaComun,
+          siteTitle: op.siteTitleEs ?? op.siteTitle,
+          outline:   { label: 'En esta página', level: [2, 3] },
+          docFooter: { prev: 'Anterior', next: 'Siguiente' },
+          nav: op.nav ?? [],
+          sidebar: conPrefijoEs(sidebarEs),
+        } as any,
+      },
+    },
     markdown: {
       config(md) {
         md.use(tabsMarkdownPlugin)
@@ -72,27 +140,7 @@ export function crearSitioSoluciones(op: OpcionesSitio) {
       }
     },
     vite: VITE_CONFIG,
-    themeConfig: {
-      siteTitle: op.siteTitle,
-      outline: { label: 'En aquesta pàgina', level: [2, 3] },
-      docFooter: { prev: 'Anterior', next: 'Següent' },
-      nav: op.nav ?? [],
-      sidebar: op.sidebar ?? [],
-      logoBranding: {
-        mode:       LOGOS.mode,
-        darkSuffix: LOGOS.darkSuffix,
-        logos: {
-          gva:    { src: `${assets}img/logo-gva.png`,    height: LOGOS.heights.gva    },
-          centro: { src: `${assets}img/logo-centro.png`, height: LOGOS.heights.centro },
-          footer: { src: `${assets}img/logo-centro.png`,  height: LOGOS.heights.footer },
-        },
-      },
-      copyright: PROJECT.copyright,
-      license: { text: PROJECT.license.text, url: PROJECT.license.url, icon: '' },
-      // PrintWatermark.vue aplica withBase() al logo, así que la ruta ha de ser
-      // relativa a ESTE sitio: de ahí la copia en public/img/ de cada uno.
-      printWatermark: { logo: '/img/logo.png', opacity: 0.10 },
-      ...(op.extraTheme ?? {}),
-    } as any,
+    // themeConfig vive dentro de cada locale (ver arriba): lo que se ponga
+    // aquí lo pisaría el de la locale activa.
   })
 }

@@ -6,4 +6,6 @@ export default crearSitioSoluciones({
   clave:     'uf8',
   titulo:    'Solucions · UF8 - Programació Orientada a Objectes II',
   siteTitle: 'Solucions</br>UF8',
+  tituloEs:    'Soluciones · UF8 - Programación Orientada a Objetos II',
+  siteTitleEs: 'Soluciones</br>UF8',
 })

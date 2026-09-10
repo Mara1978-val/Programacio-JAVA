@@ -6,4 +6,6 @@ export default crearSitioSoluciones({
   clave:     'uf5-1',
   titulo:    'Solucions · UF5.1 - Estructures de Dades Dinàmiques I',
   siteTitle: 'Solucions</br>UF5.1',
+  tituloEs:    'Soluciones · UF5.1 - Estructuras de Datos Dinámicas I',
+  siteTitleEs: 'Soluciones</br>UF5.1',
 })

@@ -6,6 +6,8 @@ export default crearSitioSoluciones({
   clave:     'uf4',
   titulo:    'Solucions · UF4 - Estructures repetitives',
   siteTitle: 'Solucions</br>UF4',
+  tituloEs:    'Soluciones · UF4 - Estructuras repetitivas',
+  siteTitleEs: 'Soluciones</br>UF4',
   sidebar: [
     {
       text: '✅ Solucions',
@@ -13,6 +15,17 @@ export default crearSitioSoluciones({
       items: [
         { text: 'Solucions', link: '/8-solucions' },
         { text: 'Solució de la tasca addicional', link: '/9-tasca-adicional-solucio' },
+      ],
+    },
+  ],
+  // Los enlaces son los mismos: la fábrica les antepone '/es'.
+  sidebarEs: [
+    {
+      text: '✅ Soluciones',
+      collapsed: false,
+      items: [
+        { text: 'Soluciones', link: '/8-solucions' },
+        { text: 'Solución de la tarea adicional', link: '/9-tasca-adicional-solucio' },
       ],
     },
   ],

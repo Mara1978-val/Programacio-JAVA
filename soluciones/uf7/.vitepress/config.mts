@@ -6,4 +6,6 @@ export default crearSitioSoluciones({
   clave:     'uf7',
   titulo:    'Solucions · UF7 - Programació Orientada a Objectes I',
   siteTitle: 'Solucions</br>UF7',
+  tituloEs:    'Soluciones · UF7 - Programación Orientada a Objetos I',
+  siteTitleEs: 'Soluciones</br>UF7',
 })

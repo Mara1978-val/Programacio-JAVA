@@ -7,11 +7,12 @@ import { indiceProfesorado } from '../../_shared/indice'
 import { PROJECT } from '../../../src/.vitepress/config/project'
 
 export default crearSitioSoluciones({
-  clave:     'profesor',
-  titulo:    'Índice del profesorado 26/27',
-  siteTitle: 'Índice del</br>profesorado',
-  lang:      'es-ES',
+  clave:       'profesor',
+  titulo:      'Índex del professorat 26/27',
+  siteTitle:   'Índex del</br>professorat',
+  tituloEs:    'Índice del profesorado 26/27',
+  siteTitleEs: 'Índice del</br>profesorado',
   // La portada lo lee con useData(): así las URLs salen siempre de rutas.ts
-  // y los títulos de units.ts.
+  // y los títulos de units.ts. Cada idioma toma su rótulo de la misma fila.
   extraTheme: { indiceProfesorado: indiceProfesorado(PROJECT.basePath) },
 })

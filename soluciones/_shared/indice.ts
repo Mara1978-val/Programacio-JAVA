@@ -18,7 +18,9 @@ import { UNITS } from '../../src/.vitepress/config/units'
 import { RUTAS } from './rutas'
 
 export interface PaginaSolucion {
-  text: string
+  /** Rótulo del enlace en cada idioma. */
+  ca: string
+  es: string
   slug: string
 }
 
@@ -37,20 +39,20 @@ const ORDEN = [
  * El slug es el nombre del .md dentro de soluciones/<clave>/.
  */
 const SOLUCIONES: Record<string, PaginaSolucion[]> = {
-  'uf2':   [{ text: 'Soluciones', slug: 'Solucions' }],
-  'uf3-2': [{ text: 'Soluciones', slug: '14-solucions' }],
+  'uf2':   [{ ca: 'Solucions', es: 'Soluciones', slug: 'Solucions' }],
+  'uf3-2': [{ ca: 'Solucions', es: 'Soluciones', slug: '14-solucions' }],
   'uf4':   [
-    { text: 'Soluciones', slug: '8-solucions' },
-    { text: 'Solución de la tarea adicional', slug: '9-tasca-adicional-solucio' },
+    { ca: 'Solucions',                      es: 'Soluciones',                       slug: '8-solucions' },
+    { ca: 'Solució de la tasca addicional', es: 'Solución de la tarea adicional',   slug: '9-tasca-adicional-solucio' },
   ],
-  'uf5-1': [{ text: 'Soluciones', slug: '13-solucions' }],
-  'uf5-2': [{ text: 'Soluciones', slug: '5-solucions' }],
-  'uf6':   [{ text: 'Soluciones', slug: '11-solucions' }],
-  'uf7':   [{ text: 'Soluciones', slug: '15-solucions' }],
-  'uf8':   [{ text: 'Soluciones', slug: '9-solucions' }],
-  'uf9':   [{ text: 'Soluciones', slug: '8-solucions' }],
-  'uf10':  [{ text: 'Soluciones', slug: '6-solucions' }],
-  'uf11':  [{ text: 'Soluciones', slug: '13-solucions' }],
+  'uf5-1': [{ ca: 'Solucions', es: 'Soluciones', slug: '13-solucions' }],
+  'uf5-2': [{ ca: 'Solucions', es: 'Soluciones', slug: '5-solucions' }],
+  'uf6':   [{ ca: 'Solucions', es: 'Soluciones', slug: '11-solucions' }],
+  'uf7':   [{ ca: 'Solucions', es: 'Soluciones', slug: '15-solucions' }],
+  'uf8':   [{ ca: 'Solucions', es: 'Soluciones', slug: '9-solucions' }],
+  'uf9':   [{ ca: 'Solucions', es: 'Soluciones', slug: '8-solucions' }],
+  'uf10':  [{ ca: 'Solucions', es: 'Soluciones', slug: '6-solucions' }],
+  'uf11':  [{ ca: 'Solucions', es: 'Soluciones', slug: '13-solucions' }],
 }
 
 /** Los títulos de units.ts vienen como 'UF5.1 - Estructuras de Datos Dinámicas I'. */
@@ -63,6 +65,8 @@ function partirTitulo(title: string): { etiqueta: string; nombre: string } {
 const porCode = new Map(Object.values(UNITS).map(u => [u.code, u]))
 
 export interface EnlaceIndice { text: string; url: string }
+/** Un enlace a soluciones lleva el rótulo en los dos idiomas; la URL es la misma. */
+export interface EnlaceSolucion { ca: string; es: string; url: string }
 export interface FilaIndice {
   clave: string
   /** 'UF5.1', para la primera columna. */
@@ -72,7 +76,7 @@ export interface FilaIndice {
   es: EnlaceIndice
   ca: EnlaceIndice
   /** Vacío si la unidad todavía no tiene soluciones publicadas. */
-  soluciones: EnlaceIndice[]
+  soluciones: EnlaceSolucion[]
 }
 
 /**
@@ -103,7 +107,8 @@ export function indiceProfesorado(basePath: string): FilaIndice[] {
       es: { text: es.nombre, url: `${basePath}${clave}/` },
       ca: { text: ca.nombre, url: `${basePath}ca/${clave}/` },
       soluciones: paginas.map(p => ({
-        text: p.text,
+        ca: p.ca,
+        es: p.es,
         url: `${basePath}${ruta}/${p.slug}`,
       })),
     }

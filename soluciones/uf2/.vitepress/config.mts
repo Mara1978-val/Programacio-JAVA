@@ -6,4 +6,6 @@ export default crearSitioSoluciones({
   clave:     'uf2',
   titulo:    'Solucions · UF2 - Representació d\'Algoritmes',
   siteTitle: 'Solucions</br>UF2',
+  tituloEs:    'Soluciones · UF2 - Representación de Algoritmos',
+  siteTitleEs: 'Soluciones</br>UF2',
 })

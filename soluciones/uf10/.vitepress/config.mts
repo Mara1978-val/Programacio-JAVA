@@ -6,4 +6,6 @@ export default crearSitioSoluciones({
   clave:     'uf10',
   titulo:    'Solucions · UF10 - Persistència de dades I: Fitxers',
   siteTitle: 'Solucions</br>UF10',
+  tituloEs:    'Soluciones · UF10 - Persistencia de datos I: Ficheros',
+  siteTitleEs: 'Soluciones</br>UF10',
 })

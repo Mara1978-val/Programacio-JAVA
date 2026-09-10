@@ -6,4 +6,6 @@ export default crearSitioSoluciones({
   clave:     'uf9',
   titulo:    'Solucions · UF9 - Excepcions',
   siteTitle: 'Solucions</br>UF9',
+  tituloEs:    'Soluciones · UF9 - Excepciones',
+  siteTitleEs: 'Soluciones</br>UF9',
 })
