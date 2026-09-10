@@ -236,18 +236,22 @@ public class Main {
 
 #### 📦 Codi Java
 
-=== "Java"
+:::: tabs
+=== Java
 
-    === "Conexió"
+::: tabs
+== Conexió
 
-        ```java
+```java
 
-        ```
+```
+:::
 
-    === "App.java"
+::: tabs
+== App.java
 
-        ```java
-        /*
+```java
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
@@ -294,6 +298,8 @@ public class Main {
 }
 
 ```
+:::
+::::
 ## 🧠 Exercici 5
 
 #### 📦 Codi Java

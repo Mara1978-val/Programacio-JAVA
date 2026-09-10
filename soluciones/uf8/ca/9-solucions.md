@@ -363,6 +363,7 @@ interface VelocitatProcesCalculable {
 
 
 ```
+:::
 ::: tabs
 == Aleatoris
 
@@ -705,6 +706,8 @@ Per a poder tindre un bon control de tots els animals, resultarà molt úil fer 
 - S'evitarà, en la mesura en què siga possible, l'ús de mètodes estàtics.
 
 El programa consistirà en un bucle infinit que només acabarà si l'usuari selecciona l'opció corresponent. A aquest bucle se'l coneix com bucle principal del programa, i sol estar directament al mètode principal. El bucle principal executarà, en cada iteració, el mètode encarregat de mostrar el menú i un mètode gestor de funcionalitats. Aquest segon serà l'encarregat d'obtindre la selecció de l'usuari i de cridar a la funció corresponent. Tots aquests poden ser mètodes estàtics de la classe principal.
+
+:::
 
 #### 📦 Codi Java
 :::: tabs
@@ -1252,6 +1255,7 @@ Benvingut a la Cooperativa Cosmolab: Que desitjes fer hui?
 
 - Possibilitat d'afegir una nova Zona demanant un nom a l'usuari.
 - Possibilitat de buscar una Zona per a realitzar accions. La zona es buscarà per nom i oferirem a l'usuari la llista de zones existents perquè puga escriure el nom d'una d'elles fàcilment.
+:::
 
 
 ::: details Menú d'accions en les Zones 
@@ -1271,8 +1275,9 @@ Selecciona l'acció a fer en la zona: [NOM DE LA ZONA];
 - Possibilitat de modificar unitats de cultiu en zones operatives:
   - Possibilitat d'augmentar i disminuir el nombre de plantes, dins del límit establit.
   - Possibilitat d'activar o desactivar el sistema de gestió d'aigua. Per a afegir plantes, el sistema ha d'estar actiu. Mentre hi haja plantes, no es podrà desactivar. Per a eliminar la unitat, caldrà primer deixar el nombre de plantes a 0.
+:::
 
-::: details Menú d'accions per a modificar una Unitat de Cultiu
+:::: details Menú d'accions per a modificar una Unitat de Cultiu
 
 ```plaintext
 Selecciona l'acció a fer en la zona: [NOM DE LA ZONA];
@@ -1320,6 +1325,8 @@ Quina modificació vols fer?
     - Les unitats energètiques poden, de sobte, oferir fins a un 20% menys de la potència que deurien. Aquest comportament inesperat pot ocórrer en qualsevol moment que l'usuari demane un anàlisi energètic, amb una probabilitat d'avaria del 5% més un 2% addicional per cada any d'ús que tinga. Si la potència oferida cau per baix de la consumida, es considera que es perd la zona de manera irrecuperable amb totes les seues unitats operatives. Per fer-ho senzill, només farem aquesta comprovació quan fem un anàlisi energètic, no cada vegada que canvie el consum energètic de la zona.
     - Les unitats d'anàlisi atmosfèric poden, de sobte, donar dades completament incorrectes si s'avarien, cosa que pot passar en una probabilitat del 10% més un altre 1% per cada any d'ús, i pot ocórrer cada vegada que l'usuari fa un anàlisi atmosfèric. Quan s'avarien donaràn valors negatius d'oxigen i ppm.
     - Ambdues situacions es poden solucionar. L'usuari sempre tindrà accés a l'opció que permet solucionar les avaries  en cadascun dels dos tipus d'unitats, però en cas de seleccionar aquesta opció sense que la unitat estiga avariada es mostrarà un missatge informant que ningun mal funcionament ha sigut detectat. En cas de sí haver, es solucionarà.
+
+::::
 
 
 #### 📦 Codi Java

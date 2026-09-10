@@ -1975,6 +1975,7 @@ public class Semafor {
     }
 }
 ```
+:::
 
 ::: tabs
 == Control Transit
@@ -2001,3 +2002,6 @@ public class ControlTransit {
     }
 }
 ```
+
+:::
+::::

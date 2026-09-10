@@ -325,6 +325,7 @@ public class Article{
   }
 }
 ```
+:::
 
 ::: tabs
 == Exemples.java
@@ -475,6 +476,7 @@ public class Contenidor {
     }
 }
 ```
+:::
 
 ::: tabs
 == App

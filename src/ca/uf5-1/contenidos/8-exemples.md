@@ -481,8 +481,6 @@ El vector introduït és: 1 2 3 4 5
 Podem introduir els valors amb espais i una vegada introduït el cinqué número donar-li al 'intro'. O introduir un valor per línia.
 
 
-:::
-
 ## Exemple 12
 
 Eliminar element d'un Array

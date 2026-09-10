@@ -116,5 +116,6 @@ public class Pizza {
         return "Pizza " + this.tipus + " (" + this.tamany + ") - Estat: " + this.estat;
     }
 }
+```
 
 :::

@@ -43,3 +43,6 @@ public class GestioPersones {
         llista.remove(0); // Elimina el primer element i reajusta la llista
     }
 }
+```
+
+:::

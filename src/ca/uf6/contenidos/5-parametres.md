@@ -70,7 +70,7 @@ En la majoria de llenguatges de programació existeixen dos modes generals d'env
   :::
   ::::
 
-::: tip IMPORTANT
+:::: tip IMPORTANT
 
 Com un paràmetre de tipus objecte és una referència a l'objecte String o Array que està fora d'ella,si se li assigna un altre objecte es perd la referència i ja no es pot accedir a l'objecte fora de la funció. Encara que Java permet fer-ho, no s'aconsella fer-ho.
 
@@ -93,3 +93,5 @@ public static void funcion2(String x) {
 ```
 
 :::
+
+::::
