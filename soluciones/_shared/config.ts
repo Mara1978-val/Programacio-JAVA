@@ -80,10 +80,9 @@ export function crearSitioSoluciones(op: OpcionesSitio) {
         mode:       LOGOS.mode,
         darkSuffix: LOGOS.darkSuffix,
         logos: {
-          autor:  { src: `${assets}img/logo-autor.png`,  height: LOGOS.heights.autor  },
           gva:    { src: `${assets}img/logo-gva.png`,    height: LOGOS.heights.gva    },
           centro: { src: `${assets}img/logo-centro.png`, height: LOGOS.heights.centro },
-          footer: { src: `${assets}img/logo-autor.png`,  height: LOGOS.heights.footer },
+          footer: { src: `${assets}img/logo-centro.png`,  height: LOGOS.heights.footer },
         },
       },
       copyright: PROJECT.copyright,
