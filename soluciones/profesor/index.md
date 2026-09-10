@@ -49,18 +49,3 @@ el clic acabaria en un 404. **No lleves l'atribut.**
     </tr>
   </tbody>
 </table>
-
-## Enllaços per a copiar
-
-<ul>
-  <li v-for="u in indice" :key="u.clave">
-    <strong>{{ u.unidad }}</strong>
-    <ul>
-      <li v-for="p in u.pagines" :key="p.slug"><code>{{ p.url }}</code></li>
-    </ul>
-  </li>
-</ul>
-
-## Unitats sense solucions
-
-UF1, UF3.1 i UF12 no portaven fitxer de solucions en el seu repositori d'origen.

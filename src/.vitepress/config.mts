@@ -40,7 +40,6 @@ const logoBranding = {
   mode:       LOGOS.mode,
   darkSuffix: LOGOS.darkSuffix,
   logos: {
-    autor:  { src: `${basePath}img/logo-autor.png`,  height: LOGOS.heights.autor  },
     gva:    { src: `${basePath}img/logo-gva.png`,    height: LOGOS.heights.gva    },
     centro: { src: `${basePath}img/logo-centro.png`, height: LOGOS.heights.centro },
     footer: { src: `${basePath}img/logo-autor.png`,  height: LOGOS.heights.footer },
