@@ -77,6 +77,9 @@ if (COLORS.typography.fontImportUrl) {
 export default defineConfig({
   base:   basePath,
   outDir: PROJECT.outDir,
+  // _partials/ son fragmentos que se insertan con <!--@include: ...-->; no son
+  // páginas y no deben tener URL propia ni salir en el mapa de rutas.
+  srcExclude: ['_partials/**'],
   vite: VITE_CONFIG,
   markdown: {
     config(md) {

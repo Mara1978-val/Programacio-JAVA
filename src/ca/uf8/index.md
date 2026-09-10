@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF08. Programació Orientada a Objectes II
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat està dissenyada per aprofundir en els conceptes avançats de la programació orientada a objectes. Aprendreu les característiques de l’herència per reutilitzar i especialitzar codi, el polimorfisme per permetre que diferents classes responguen a un mateix missatge, l’abstracció per definir estructures generals que oculten detalls interns, i les interfícies per establir contractes comuns entre classes diverses. Aquests conceptes us ajudaran a desenvolupar programari més flexible i escalable.

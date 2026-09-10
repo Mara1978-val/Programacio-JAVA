@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF11. Accés a bases de dades
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat està dissenyada per introduir-vos als conceptes bàsics d’accés a bases de dades des d’un programa. Aprendreu com connectar-vos a una base de dades, executar consultes per obtenir, inserir, modificar i eliminar dades, i gestionar la comunicació amb el sistema gestor de bases de dades de manera segura i eficient. També veureu les operacions bàsiques amb SQL i com manejar possibles errors durant l’accés a les dades.

@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF06. Funcions
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat està dedicada a l’estudi de les funcions, un element fonamental per estructurar i reutilitzar el codi. Aprendreu com es declaren i es criden les funcions, com funcionen els paràmetres i el valor de retorn, i quin és l’àmbit de les variables dins d’una funció. També s’introduirà el concepte de recursivitat, una tècnica en què una funció es crida a si mateixa per resoldre problemes de forma elegant i estructurada.

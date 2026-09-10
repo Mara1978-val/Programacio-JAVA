@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF3.2 Introducció a la Programació II
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat està dedicada a comprendre els elements fonamentals d’un llenguatge de programació. Aprendreu com es declaren les dades i variables, com s’utilitzen literals i operadors, i com es gestionen les entrades i eixides estàndard. També explorareu les estructures bàsiques del codi i les seues funcionalitats, a més de veure exemples pràctics i exercicis per reforçar els conceptes. Aquesta base us permetrà escriure programes senzills i entendre el comportament del codi des del principi.

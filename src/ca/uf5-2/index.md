@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF5.2 Estructures de Dades Dinàmiques II
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat aprofundeix en el món de les estructures de dades dinàmiques, que permeten una gestió més flexible de la informació. Explorareu conceptes fonamentals com les llistes enllaçades, que superen les limitacions de grandària fixa dels vectors. També coneixereu les piles (stacks) i les cues (queues), fonamentals per a l'organització d'operacions segons les lògiques LIFO (Last-In, First-Out) i FIFO (First-In, First-Out). Finalment, us introduireu en estructures més avançades com els arbres i les taules hash, que són clau per a optimitzar la cerca i l'accés a dades en aplicacions de major complexitat.

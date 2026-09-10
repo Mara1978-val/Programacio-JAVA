@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF12. Interfícies gràfiques
 
-::: tip Informació del curs
-**Autors:** Maria Bañuls Ribes/ Segio Pérez
-
-**Any:** 2026
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 * **Interfícies i Components:** Evolució de CLI a Web utilitzant elements modulars d'entrada, acció, informació i dades.

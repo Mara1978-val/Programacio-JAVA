@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF07. Programació Orientada a Objectes I
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat està dissenyada per introduir-vos als conceptes fonamentals de la programació orientada a objectes. Aprendreu què són les classes i els objectes, com definir-los i utilitzar-los, així com la manera de crear i gestionar atributs i mètodes bàsics per organitzar el codi de forma estructurada i modular.

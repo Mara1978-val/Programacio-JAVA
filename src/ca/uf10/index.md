@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF10. Fitxers
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat està dissenyada per introduir-vos al treball amb directoris i fitxers en programació. Aprendreu com llegir i escriure dades en fitxers de text, gestionar l’obertura i tancament correcte dels fitxers, i utilitzar les classes i mètodes bàsics per manipular fitxers de forma segura i eficient. Així podreu emmagatzemar informació persistent més enllà de l’execució del programa.

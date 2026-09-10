@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF09. Excepcions
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat està dissenyada per introduir-vos al maneig d’excepcions en la programació. Aprendreu què són les excepcions, com detectar errors durant l’execució d’un programa i com gestionar-los correctament. També veureu com crear excepcions personalitzades i garantir que el programa continue funcionant de manera segura i controlada davant situacions inesperades.

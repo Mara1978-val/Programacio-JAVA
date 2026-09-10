@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF02. Representació d'algoritmes
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat té com a objectiu introduir-vos en les diferents formes de representació d'algoritmes. Aprendreu a expressar de manera clara i estructurada les instruccions que resolen un problema, utilitzant eines com el pseudocodi i els diagrames de flux. Aquestes tècniques us ajudaran a planificar millor la lògica dels vostres programes abans de codificar-los.

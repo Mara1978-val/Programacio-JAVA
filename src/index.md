@@ -8,23 +8,7 @@ outline: [2, 3]
 
 ---
 
-::: tip-box Información del módulo
-**Autores:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Modificado por:**
--  **25-26:** Maria Bañuls Ribes / Sergio Pérez Rubio
--  **26-27:** Mara Vaño Alonso
-
-**Colaboradores:** Abelardo Martínez Serrano / Eva Mª Gómez Abad
-
-**Curso:** 2026-2027
-
-**Centro:** CEEDCV — Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-**Ciclo:** CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)
-
-![Logo CC](/img/logo-cc.png){logo}
-:::
+<!--@include: @/_partials/info-modulo.md-->
 
 ::: warning Aviso de traducción
 Estamos trabajando para ofrecer la versión en español con el nivel y la calidad que os merecéis. Este módulo fue impartido originalmente en valenciano en el centro docente y lo estamos adaptando progresivamente. Mientras tanto, **el temario completo está disponible en valenciano**. Gracias por tu paciencia.

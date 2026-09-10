@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF3.1 Introducció a la Programació I
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat té com a objectiu introduir-vos a les principals eines utilitzades en el desenvolupament de programari. Coneixereu els diferents tipus d'entorns de desenvolupament (IDEs), aprendreu a instal·lar extensions útils, a gestionar projectes i a depurar el codi de manera eficient. A més, explorareu el control de versions per a treballar de forma organitzada i col·laborativa, i seguireu guies pràctiques per començar a programar amb entorns com Visual Studio Code.

@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF5.1 Estructures de Dades Dinàmiques I
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat se centra en l'estudi de les estructures de dades bàsiques com els vectors i les matrius. Aprendreu com declarar-les, accedir-hi, modificar-les i aplicar operacions freqüents com la cerca i l’ordenació. Aquestes eines són essencials per gestionar col·leccions d’informació de manera eficient dins dels vostres programes.

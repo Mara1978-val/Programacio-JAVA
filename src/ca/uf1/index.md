@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF01. Fonaments de Programació
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu /
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat està dissenyada per introduir-vos als fonaments essencials de la programació. Aprendreu els conceptes bàsics, les metodologies i les eines necessàries per començar la vostra trajectòria en el món del desenvolupament de programari.

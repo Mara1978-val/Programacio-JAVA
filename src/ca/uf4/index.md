@@ -6,16 +6,7 @@ outline: [2, 3]
 
 # UF04. Estructures repetitives
 
-::: tip Informació del curs
-**Autors:** Guillermo Garrido Portes / David Tur Sanmateu
-
-**Any:** 2025
-
-**Centre:** CEEDCV - Centre Específic d'Educació a Distància de la Comunitat Valenciana
-
-![Logo CC](/img/logo-cc.png){logo}
-
-:::
+<!--@include: @/_partials/info-modul.md-->
 
 ::: info Síntesi de la unitat
 Aquesta unitat està centrada en l’estudi dels bucles, una estructura fonamental en la programació que permet repetir instruccions de manera controlada. Aprendreu quan i com utilitzar els diferents tipus de bucles, així com les seues aplicacions pràctiques per resoldre problemes repetitius de forma eficient.
