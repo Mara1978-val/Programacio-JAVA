@@ -10,17 +10,18 @@ outline: [2, 3]
 
 ::: tip-box Información del módulo
 **Autores:** Guillermo Garrido Portes / David Tur Sanmateu
+
 **Modificado por:**
--  **25-26:** Mariab Bañuls Ribes / Sergio Perez Rubio
+-  **25-26:** Maria Bañuls Ribes / Sergio Pérez Rubio
 -  **26-27:** Mara Vaño Alonso
 
 **Colaboradores:** Abelardo Martínez Serrano / Eva Mª Gómez Abad
 
-**Curso:** 2026
+**Curso:** 2026-2027
 
 **Centro:** CEEDCV — Centre Específic d'Educació a Distància de la Comunitat Valenciana
 
-**Ciclo:** CFGS Desarrollo de Aplicaciones Multiplataforma (DAM) / Desarrollo de Aplicaciones Web (DAW)
+**Ciclo:** CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)
 
 ![Logo CC](/img/logo-cc.png){logo}
 :::
@@ -41,20 +42,20 @@ El módulo de **Programación** recorre el camino completo desde qué significa 
 
 | Unidad | Título | Bloque |
 | :---: | :--- | :--- |
-| **UF1** | [Fundamentos de Programación](/uf1/) | Algoritmia |
-| **UF2** | [Representación de Algoritmos](/uf2/) | Algoritmia |
-| **UF3.1** | [Introducción a la Programación I](/uf3-1/) | Entorno y lenguaje |
-| **UF3.2** | [Introducción a la Programación II](/uf3-2/) | Entorno y lenguaje |
-| **UF4** | [Estructuras repetitivas](/uf4/) | Entorno y lenguaje |
-| **UF5.1** | [Estructuras de Datos Dinámicas I](/uf5-1/) | Estructuras de datos |
-| **UF5.2** | [Estructuras de Datos Dinámicas II](/uf5-2/) | Estructuras de datos |
-| **UF6** | [Funciones](/uf6/) | Modularidad |
-| **UF7** | [Programación Orientada a Objetos I](/uf7/) | POO |
-| **UF8** | [Programación Orientada a Objetos II](/uf8/) | POO |
-| **UF9** | [Excepciones](/uf9/) | Robustez |
-| **UF10** | [Persistencia de datos I: Ficheros](/uf10/) | Persistencia |
-| **UF11** | [Persistencia de datos II: Bases de datos](/uf11/) | Persistencia |
-| **UF12** | [Interfaces gráficas](/uf12/) | Interfaz |
+| **UF1** | Fundamentos de Programación | Algoritmia |
+| **UF2** | Representación de Algoritmos | Algoritmia |
+| **UF3.1** | Introducción a la Programación I | Entorno y lenguaje |
+| **UF3.2** | Introducción a la Programación II | Entorno y lenguaje |
+| **UF4** | Estructuras repetitivas | Entorno y lenguaje |
+| **UF5.1** | Estructuras de Datos Dinámicas I | Estructuras de datos |
+| **UF5.2** | Estructuras de Datos Dinámicas II | Estructuras de datos |
+| **UF6** | Funciones | Modularidad |
+| **UF7** | Programación Orientada a Objetos I | POO |
+| **UF8** | Programación Orientada a Objetos II | POO |
+| **UF9** | Excepciones | Robustez |
+| **UF10** | Persistencia de datos I: Ficheros | Persistencia |
+| **UF11** | Persistencia de datos II: Bases de datos | Persistencia |
+| **UF12** | Interfaces gráficas | Interfaz |
 
 :::
 

@@ -10,17 +10,18 @@ outline: [2, 3]
 
 ::: tip-box Informació del mòdul
 **Autors:** Guillermo Garrido Portes / David Tur Sanmateu
+
 **Modificat per:**
--  **25-26:** Mariab Bañuls Ribes / Sergio Perez Rubio
+-  **25-26:** Maria Bañuls Ribes / Sergio Pérez Rubio
 -  **26-27:** Mara Vaño Alonso
 
 **Colaboradors:** Abelardo Martínez Serrano / Eva Mª Gómez Abad
 
-**Curs:** 2026
+**Curs:** 2026-2027
 
 **Centre:** CEEDCV — Centre Específic d'Educació a Distància de la Comunitat Valenciana
 
-**Cicle:** CFGS Desenvolupament d'Aplicacions Multiplataforma (DAM) / Desenvolupament d'Aplicacions Web (DAW)
+**Cicle:** CFGS Desenvolupament d'Aplicacions Multiplataforma (DAM)
 
 ![Logo CC](/img/logo-cc.png){logo}
 :::
@@ -35,20 +36,20 @@ El mòdul de **Programació** recorre el camí complet des de què significa pro
 
 | Unitat | Títol | Bloc |
 | :---: | :--- | :--- |
-| **UF1** | [Fonaments de Programació](/ca/uf1/) | Algorísmica |
-| **UF2** | [Representació d'Algoritmes](/ca/uf2/) | Algorísmica |
-| **UF3.1** | [Introducció a la Programació I](/ca/uf3-1/) | Entorn i llenguatge |
-| **UF3.2** | [Introducció a la Programació II](/ca/uf3-2/) | Entorn i llenguatge |
-| **UF4** | [Estructures repetitives](/ca/uf4/) | Entorn i llenguatge |
-| **UF5.1** | [Estructures de Dades Dinàmiques I](/ca/uf5-1/) | Estructures de dades |
-| **UF5.2** | [Estructures de Dades Dinàmiques II](/ca/uf5-2/) | Estructures de dades |
-| **UF6** | [Funcions](/ca/uf6/) | Modularitat |
-| **UF7** | [Programació Orientada a Objectes I](/ca/uf7/) | POO |
-| **UF8** | [Programació Orientada a Objectes II](/ca/uf8/) | POO |
-| **UF9** | [Excepcions](/ca/uf9/) | Robustesa |
-| **UF10** | [Persistència de dades I: Fitxers](/ca/uf10/) | Persistència |
-| **UF11** | [Persistència de dades II: Bases de dades](/ca/uf11/) | Persistència |
-| **UF12** | [Interfícies gràfiques](/ca/uf12/) | Interfície |
+| **UF1** | Fonaments de Programació | Algorísmica |
+| **UF2** | Representació d'Algoritmes | Algorísmica |
+| **UF3.1** | Introducció a la Programació I | Entorn i llenguatge |
+| **UF3.2** | Introducció a la Programació II | Entorn i llenguatge |
+| **UF4** | Estructures repetitives | Entorn i llenguatge |
+| **UF5.1** | Estructures de Dades Dinàmiques I | Estructures de dades |
+| **UF5.2** | Estructures de Dades Dinàmiques II | Estructures de dades |
+| **UF6** | Funcions | Modularitat |
+| **UF7** | Programació Orientada a Objectes I | POO |
+| **UF8** | Programació Orientada a Objectes II | POO |
+| **UF9** | Excepcions | Robustesa |
+| **UF10** | Persistència de dades I: Fitxers | Persistència |
+| **UF11** | Persistència de dades II: Bases de dades | Persistència |
+| **UF12** | Interfícies gràfiques | Interfície |
 
 :::
 
